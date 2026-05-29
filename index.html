@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benny Soluções Web | Sites para vender mais no WhatsApp</title>
+  <meta name="description" content="Benny Soluções Web cria sites profissionais, landing pages, cardápios digitais e páginas para empresas locais que querem vender mais no WhatsApp.">
+  <meta name="keywords" content="site profissional, landing page, cardapio digital, empresa local, site para whatsapp">
+  <meta name="author" content="Benny Soluções Web">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Benny Soluções Web">
+  <meta property="og:description" content="Sites profissionais para negócios que querem vender mais no WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-mockup.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: "#000000",
+            gold: "#FFB800",
+            "gold-dark": "#CC9200",
+            soft: "#FFFFFF"
+          },
+          boxShadow: {
+            gold: "0 0 40px rgba(255, 184, 0, 0.35), 0 20px 60px -24px rgba(255, 184, 0, 0.25)",
+            glass: "0 10px 40px rgba(0,0,0,0.5)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #000000;
+      color: #ffffff;
+    }
+    .texture {
+      background-image: linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 184, 0, 0.22);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .premium-title {
+      background: linear-gradient(110deg, #ffffff 5%, #FFB800 55%, #CC9200 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 184, 0, 0.55) 50%, transparent 100%);
+    }
+    .portfolio-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 18%, rgba(0, 0, 0, 0.45) 55%, transparent 85%);
+      pointer-events: none;
+    }
+    .site-header {
+      overflow: visible;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
+    }
+    .site-header__bar {
+      overflow: visible;
+      align-items: center;
+    }
+    .site-logo-link {
+      display: block;
+      overflow: visible;
+      line-height: 0;
+    }
+    .site-logo {
+      display: block;
+      height: auto;
+      width: auto;
+      max-height: 5.75rem;
+      max-width: min(calc(100vw - 4.5rem), 340px);
+      object-fit: contain;
+      object-position: left center;
+    }
+    @media (min-width: 640px) {
+      .site-logo { max-height: 5.25rem; max-width: 400px; }
+    }
+    @media (min-width: 1024px) {
+      .site-logo { max-height: 5rem; max-width: 440px; }
+    }
+    .nav-link {
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .nav-link:hover {
+      color: #FFB800;
+    }
+    .btn-gold {
+      background: #FFB800;
+      color: #000000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-gold:hover {
+      background: #ffc933;
+      box-shadow: 0 0 28px rgba(255, 184, 0, 0.45);
+      transform: translateY(-1px);
+    }
+    .hero-visual__img {
+      width: 100%;
+      height: 118%;
+      top: -11%;
+      left: 0;
+      object-fit: cover;
+      object-position: center 48%;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="site-header fixed top-0 z-50 w-full">
+    <div class="site-header__bar mx-auto flex max-w-7xl justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:px-10">
+      <a href="#inicio" class="site-logo-link shrink-0" aria-label="Benny Soluções Web - Início">
+        <img src="assets/Logo.png?v=2" alt="Benny Soluções Web" class="site-logo" width="1047" height="448" decoding="async">
+      </a>
+
+      <nav class="hidden items-center gap-7 text-[0.95rem] text-white/95 lg:flex" aria-label="Principal">
+        <a href="#inicio" class="nav-link">Home</a>
+        <a href="#pacotes" class="nav-link">Serviços</a>
+        <a href="#para-quem" class="nav-link">Sobre nós</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <a href="#contato" class="btn-gold hidden rounded-lg px-5 py-2.5 text-sm font-bold lg:inline-block">Fale conosco</a>
+
+      <button id="menuBtn" class="shrink-0 rounded-lg border border-white/20 p-2.5 text-white lg:hidden" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-black/95 px-5 pb-5 lg:hidden">
+      <div class="flex flex-col gap-3 pt-4 text-sm text-white/90">
+        <a href="#inicio" class="nav-link py-1">Home</a>
+        <a href="#pacotes" class="nav-link py-1">Serviços</a>
+        <a href="#para-quem" class="nav-link py-1">Sobre nós</a>
+        <a href="#portfolio" class="nav-link py-1">Portfólio</a>
+        <a href="#contato" class="nav-link py-1">Contato</a>
+        <a href="#contato" class="btn-gold mt-2 rounded-lg px-5 py-3 text-center text-sm font-bold">Fale conosco</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero-visual relative w-full overflow-hidden bg-black" aria-label="Apresentação">
+      <div class="relative h-[min(88vh,780px)] w-full sm:h-[min(90vh,820px)]">
+        <img
+          src="assets/hero-mockup.png"
+          alt="Benny Soluções Web — identidade visual premium em dourado e preto"
+          class="hero-visual__img absolute"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black"></div>
+      </div>
+    </section>
+
+    <div class="texture">
+    <div class="mx-auto max-w-7xl section-divider"></div>
+
+    <section id="para-quem" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Para quem é</h2>
+        <p class="mt-3 text-white/75">Soluções ideais para quem precisa atrair clientes e fechar mais pelo WhatsApp.</p>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Barbearias</h3></article>
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Restaurantes e lanchonetes</h3></article>
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Igrejas e eventos</h3></article>
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Motoristas executivos</h3></article>
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Lojas locais</h3></article>
+        <article class="reveal glass rounded-xl p-6"><h3 class="text-xl font-bold text-gold">Profissionais autônomos</h3></article>
+      </div>
+    </section>
+
+    <section id="pacotes" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Pacotes</h2>
+        <p class="mt-3 text-white/75">Escolha o plano ideal para o seu momento.</p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="reveal glass rounded-2xl p-7">
+          <p class="text-xs uppercase tracking-[0.14em] text-white/70">Página Inicial</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-gold">a partir de R$197</h3>
+          <ul class="mt-5 space-y-2 text-white/85">
+            <li>1 página profissional</li>
+            <li>Botão WhatsApp integrado</li>
+            <li>Layout responsivo</li>
+          </ul>
+        </article>
+        <article class="reveal rounded-2xl border border-gold/40 bg-gradient-to-b from-[#1a1408] to-[#0a0a0a] p-7 shadow-gold">
+          <p class="text-xs uppercase tracking-[0.14em] text-gold">Site Profissional</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-gold">a partir de R$497</h3>
+          <ul class="mt-5 space-y-2 text-white/90">
+            <li>Site completo</li>
+            <li>SEO básico</li>
+            <li>Formulário e conversão</li>
+          </ul>
+        </article>
+        <article class="reveal glass rounded-2xl p-7">
+          <p class="text-xs uppercase tracking-[0.14em] text-white/70">Projeto Premium</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-gold">sob orçamento</h3>
+          <ul class="mt-5 space-y-2 text-white/85">
+            <li>Sistema personalizado</li>
+            <li>Dashboard e automações</li>
+            <li>Estratégia completa</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Portfólio Profissional</h2>
+        <p class="mt-3 text-white/75">Modelos de projetos que mostram padrão premium e foco comercial.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=900&q=80" alt="Site Uber VIP com referência visual para Uber e 99" class="h-52 w-full object-cover">
+          <div class="relative z-10 p-5">
+            <h3 class="text-xl font-bold text-gold">Site Uber VIP</h3>
+            <p class="mt-2 text-sm text-white/85">Página para corrida executiva com foco em captação de corridas para Uber e 99.</p>
+            <button class="mt-4 rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</button>
+          </div>
+        </article>
+        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=900&q=80" alt="Página institucional para igreja e eventos" class="h-52 w-full object-cover">
+          <div class="relative z-10 p-5">
+            <h3 class="text-xl font-bold text-gold">Página para Igreja</h3>
+            <p class="mt-2 text-sm text-white/85">Agenda de cultos, localização e comunicação direta com visitantes.</p>
+            <button class="mt-4 rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</button>
+          </div>
+        </article>
+        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80" alt="Cardápio digital para restaurante local" class="h-52 w-full object-cover">
+          <div class="relative z-10 p-5">
+            <h3 class="text-xl font-bold text-gold">Cardápio Digital</h3>
+            <p class="mt-2 text-sm text-white/85">Cardápio online com botão de pedido e destaque para promoções.</p>
+            <button class="mt-4 rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</button>
+          </div>
+        </article>
+        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" alt="Landing page para evento com vendas" class="h-52 w-full object-cover">
+          <div class="relative z-10 p-5">
+            <h3 class="text-xl font-bold text-gold">Landing Page para Evento</h3>
+            <p class="mt-2 text-sm text-white/85">Página de inscrição com prova social e CTA de alta conversão.</p>
+            <button class="mt-4 rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</button>
+          </div>
+        </article>
+        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Loja local com catálogo e atendimento no WhatsApp" class="h-52 w-full object-cover">
+          <div class="relative z-10 p-5">
+            <h3 class="text-xl font-bold text-gold">Loja Local</h3>
+            <p class="mt-2 text-sm text-white/85">Catálogo visual para atrair pedidos rápidos pelo WhatsApp.</p>
+            <button class="mt-4 rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Como funciona</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-gold">Passo 1</p>
+          <h3 class="mt-2 text-2xl font-bold">Você chama no WhatsApp</h3>
+        </article>
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-gold">Passo 2</p>
+          <h3 class="mt-2 text-2xl font-bold">Eu monto a proposta</h3>
+        </article>
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-gold">Passo 3</p>
+          <h3 class="mt-2 text-2xl font-bold">Seu site vai ao ar</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Benefícios</h2>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal glass rounded-xl p-5 font-semibold">Entrega rápida</div>
+        <div class="reveal glass rounded-xl p-5 font-semibold">Design moderno</div>
+        <div class="reveal glass rounded-xl p-5 font-semibold">Site no celular</div>
+        <div class="reveal glass rounded-xl p-5 font-semibold">Botão direto para WhatsApp</div>
+        <div class="reveal glass rounded-xl p-5 font-semibold">Hospedagem gratuita possível</div>
+        <div class="reveal glass rounded-xl p-5 font-semibold">SEO básico</div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="reveal mb-8">
+        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Depoimentos (exemplo visual)</h2>
+        <p class="mt-2 text-sm text-white/65">Conteúdo ilustrativo para visual da página, não representa clientes reais confirmados.</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-white/85">"Meu negócio ficou com aparência profissional e comecei a receber mais contatos no WhatsApp."</p>
+          <p class="mt-3 text-sm text-gold">Exemplo visual — Dona de loja local</p>
+        </article>
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-white/85">"O site ficou leve, bonito e direto ao ponto. Muito acima do que eu esperava."</p>
+          <p class="mt-3 text-sm text-gold">Exemplo visual — Profissional autônomo</p>
+        </article>
+        <article class="reveal glass rounded-xl p-6">
+          <p class="text-white/85">"A landing page facilitou muito para divulgar meu evento e organizar inscrições."</p>
+          <p class="mt-3 text-sm text-gold">Exemplo visual — Organizador de evento</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
+      <div class="reveal rounded-2xl border border-gold/35 bg-gradient-to-r from-[#1a1408] to-[#0a0a0a] p-8 shadow-gold sm:p-12">
+        <h2 class="text-3xl font-black leading-tight text-gold sm:text-4xl">Quer colocar seu negócio na internet ainda essa semana?</h2>
+        <p class="mt-4 max-w-2xl text-white/85">Me chama agora no WhatsApp e eu te mostro o melhor caminho para ter um site profissional que gere mais contatos.</p>
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20colocar%20meu%20neg%C3%B3cio%20na%20internet%20ainda%20essa%20semana." target="_blank" rel="noopener noreferrer" class="btn-gold mt-7 inline-block rounded-xl px-7 py-3 text-sm font-bold">
+          Falar no WhatsApp agora
+        </a>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 text-sm text-white/70 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <p>© <span id="year"></span> Benny Soluções Web. Todos os direitos reservados.</p>
+      <p>Sites com visual premium e foco comercial.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp" class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full border-2 border-white/60 bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_45px_-12px_rgba(37,211,102,0.85)] transition hover:scale-105 hover:brightness-110">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M19.11 17.39c-.3-.16-1.78-.88-2.06-.98s-.47-.15-.67.15-.77.98-.94 1.18-.35.22-.65.08a8.43 8.43 0 0 1-2.48-1.53 9.19 9.19 0 0 1-1.71-2.12c-.18-.3 0-.46.14-.62.14-.14.3-.35.45-.52s.2-.3.3-.5.05-.38-.03-.53c-.08-.16-.67-1.6-.92-2.2-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.38s-1.05 1.03-1.05 2.52 1.07 2.94 1.22 3.14c.15.2 2.1 3.2 5.09 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.88.12.57-.08 1.78-.73 2.03-1.43s.25-1.3.18-1.43-.27-.2-.57-.35z"/>
+      <path d="M27.04 4.96A15.9 15.9 0 0 0 4.9 27.06L3.07 32l5.07-1.76a15.9 15.9 0 0 0 7.6 1.93h.01c8.77 0 15.9-7.12 15.9-15.9 0-4.25-1.65-8.24-4.61-11.31zm-11.3 24.53h-.01a13.2 13.2 0 0 1-6.72-1.84l-.48-.29-3 .98.98-2.93-.31-.5a13.2 13.2 0 0 1 20.57-16.37 13.2 13.2 0 0 1-11.03 20.95z"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+    document.querySelectorAll("#mobileMenu a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
