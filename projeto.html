@@ -47,29 +47,14 @@
       background: #ffc933;
       box-shadow: 0 0 20px rgba(255, 184, 0, 0.4);
     }
-    .projeto-bar__acoes {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      min-width: 0;
-    }
     .projeto-bar__titulo {
       font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.75);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      min-width: 0;
     }
-    .btn-nova-aba {
-      flex-shrink: 0;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #ffb800;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-    .btn-nova-aba:hover { border-bottom-color: #ffb800; }
     .projeto-frame-wrap {
       flex: 1;
       min-height: 0;
@@ -94,10 +79,7 @@
       <span aria-hidden="true">←</span>
       Voltar para Benny
     </a>
-    <div class="projeto-bar__acoes">
-      <p class="projeto-bar__titulo" id="projetoTitulo">Carregando projeto…</p>
-      <a id="linkNovaAba" href="#" target="_blank" rel="noopener noreferrer" class="btn-nova-aba">Abrir em nova aba</a>
-    </div>
+    <p class="projeto-bar__titulo" id="projetoTitulo">Carregando projeto…</p>
   </header>
 
   <div class="projeto-frame-wrap">
@@ -128,14 +110,12 @@
 
     const frame = document.getElementById("projetoFrame");
     const titulo = document.getElementById("projetoTitulo");
-    const linkNovaAba = document.getElementById("linkNovaAba");
 
     if (!projeto) {
       window.location.replace(BENNY_HOME + "#portfolio");
     } else {
       document.title = projeto.titulo + " | Benny Soluções Web";
       titulo.textContent = projeto.titulo;
-      linkNovaAba.href = projeto.url;
       frame.src = projeto.url;
     }
   </script>
