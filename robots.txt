@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /projeto.html
 
-Sitemap: https://bennysolucoesweb.vercel.app/sitemap.xml
+Sitemap: https://www.bennysolucoesweb.com.br/sitemap.xml
