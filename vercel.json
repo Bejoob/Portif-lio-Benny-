@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bennysolucoesweb.vercel.app"
+        }
+      ],
+      "destination": "https://www.bennysolucoesweb.com.br/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
