@@ -278,6 +278,60 @@
       background: rgba(255, 184, 0, 0.08);
       flex-shrink: 0;
     }
+    /* Portfolio slider */
+    .portfolio-slider {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0.25rem 0.25rem 1rem;
+      margin: -0.25rem -0.25rem 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .portfolio-slider::-webkit-scrollbar { display: none; }
+    .portfolio-slide {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+    }
+    @media (min-width: 640px) {
+      .portfolio-slide { flex-basis: 65%; }
+    }
+    @media (min-width: 1024px) {
+      .portfolio-slide { flex-basis: 44%; }
+    }
+    .portfolio-nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      flex-shrink: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 184, 0, 0.4);
+      background: rgba(255, 184, 0, 0.06);
+      color: #FFB800;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .portfolio-nav-btn:hover {
+      background: rgba(255, 184, 0, 0.16);
+    }
+    .portfolio-nav-btn:active {
+      transform: scale(0.94);
+    }
+    .portfolio-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 184, 0, 0.25);
+      transition: background 0.2s ease, width 0.2s ease;
+    }
+    .portfolio-dot.active {
+      width: 22px;
+      background: #FFB800;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -557,60 +611,73 @@
 
     <!-- =============================== PORTFOLIO =============================== -->
     <section id="portfolio" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Portfólio Profissional</h2>
-        <p class="mt-3 text-white/75">Modelos de projetos que mostram padrão premium e foco comercial.</p>
+      <div class="reveal mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Portfólio Profissional</h2>
+          <p class="mt-3 text-white/75">Modelos de projetos que mostram padrão premium e foco comercial.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="portfolioPrev" type="button" class="portfolio-nav-btn" aria-label="Projeto anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline stroke-linecap="round" stroke-linejoin="round" points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button id="portfolioNext" type="button" class="portfolio-nav-btn" aria-label="Próximo projeto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline stroke-linecap="round" stroke-linejoin="round" points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-ingrid.jpg" alt="Print real do site de nail designer entregue para atendimento domiciliar" class="h-52 w-full object-cover" loading="lazy">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Site de Nail Designer</h3>
-            <p class="mt-2 text-sm text-white/85">Página premium para atendimento domiciliar com galeria de trabalhos e agendamento no WhatsApp.</p>
-            <a href="projeto.html?p=ingrid" class="mt-4 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
+
+      <div id="portfolioSlider" class="portfolio-slider">
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="assets/portfolio-ingrid.jpg" alt="Print real do site de nail designer entregue para atendimento domiciliar" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Site de Nail Designer</h3>
+            <p class="mt-2 text-white/85">Página premium para atendimento domiciliar com galeria de trabalhos e agendamento no WhatsApp.</p>
+            <a href="projeto.html?p=ingrid" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
           </div>
         </article>
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-uber-vip.jpg" alt="Print real do site Uber VIP entregue para motorista executivo" class="h-52 w-full object-cover" loading="lazy">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Site de Motorista VIP</h3>
-            <p class="mt-2 text-sm text-white/85">Página para corrida executiva com foco em captação de corridas para Uber e 99.</p>
-            <a href="projeto.html?p=uber-vip" class="mt-4 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="assets/portfolio-uber-vip.jpg" alt="Print real do site Uber VIP entregue para motorista executivo" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Site de Motorista VIP</h3>
+            <p class="mt-2 text-white/85">Página para corrida executiva com foco em captação de corridas para Uber e 99.</p>
+            <a href="projeto.html?p=uber-vip" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
           </div>
         </article>
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-igreja.jpg" alt="Print real do site institucional entregue para a Comunidade Cristã Missão Vitória" class="h-52 w-full object-cover" loading="lazy">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Página para Igreja</h3>
-            <p class="mt-2 text-sm text-white/85">Agenda de cultos, localização e comunicação direta com visitantes.</p>
-            <a href="projeto.html?p=igreja" class="mt-4 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="assets/portfolio-igreja.jpg" alt="Print real do site institucional entregue para a Comunidade Cristã Missão Vitória" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Página para Igreja</h3>
+            <p class="mt-2 text-white/85">Agenda de cultos, localização e comunicação direta com visitantes.</p>
+            <a href="projeto.html?p=igreja" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
           </div>
         </article>
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-geise.jpg" alt="Print real do site de confeitaria entregue para Gê Bolos e Doces" class="h-52 w-full object-cover" loading="lazy">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Site de Confeitaria</h3>
-            <p class="mt-2 text-sm text-white/85">Catálogo de bolos, chocotones e doces finos com pedido direto pelo WhatsApp.</p>
-            <a href="projeto.html?p=geise" class="mt-4 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="assets/portfolio-geise.jpg" alt="Print real do site de confeitaria entregue para Gê Bolos e Doces" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Site de Confeitaria</h3>
+            <p class="mt-2 text-white/85">Catálogo de bolos, chocotones e doces finos com pedido direto pelo WhatsApp.</p>
+            <a href="projeto.html?p=geise" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
           </div>
         </article>
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-suzucap.jpg" alt="Print real do site de oficina mecânica entregue para Suzucap" class="h-52 w-full object-cover" loading="lazy">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Site de Oficina Mecânica</h3>
-            <p class="mt-2 text-sm text-white/85">Página para oficina especializada em Suzuki, com serviços e agendamento pelo WhatsApp.</p>
-            <a href="projeto.html?p=suzucap" class="mt-4 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="assets/portfolio-suzucap.jpg" alt="Print real do site de oficina mecânica entregue para Suzucap" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Site de Oficina Mecânica</h3>
+            <p class="mt-2 text-white/85">Página para oficina especializada em Suzuki, com serviços e agendamento pelo WhatsApp.</p>
+            <a href="projeto.html?p=suzucap" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
           </div>
         </article>
-        <article class="portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Loja local com catálogo e atendimento no WhatsApp" class="h-52 w-full object-cover">
-          <div class="relative z-10 p-5">
-            <h3 class="text-xl font-bold text-gold">Loja Local</h3>
-            <p class="mt-2 text-sm text-white/85">Catálogo visual para atrair pedidos rápidos pelo WhatsApp.</p>
-            <button class="mt-4 cursor-default rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold/60">Em Breve</button>
+        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Loja local com catálogo e atendimento no WhatsApp" class="h-72 w-full object-cover sm:h-80 lg:h-96">
+          <div class="relative z-10 p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-gold">Loja Local</h3>
+            <p class="mt-2 text-white/85">Catálogo visual para atrair pedidos rápidos pelo WhatsApp.</p>
+            <button class="mt-5 cursor-default rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold/60">Em Breve</button>
           </div>
         </article>
       </div>
+
+      <div id="portfolioDots" class="mt-6 flex items-center justify-center gap-2"></div>
     </section>
 
     <div class="mx-auto max-w-7xl section-divider"></div>
@@ -808,6 +875,55 @@
     }, { threshold: 0.14 });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const portfolioSlider = document.getElementById("portfolioSlider");
+    if (portfolioSlider) {
+      const slides = Array.from(portfolioSlider.children);
+      const dotsWrap = document.getElementById("portfolioDots");
+      const prevBtn = document.getElementById("portfolioPrev");
+      const nextBtn = document.getElementById("portfolioNext");
+
+      slides.forEach((slide, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "portfolio-dot";
+        dot.setAttribute("aria-label", `Ir para o projeto ${i + 1}`);
+        dot.addEventListener("click", () => {
+          slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+        dotsWrap.appendChild(dot);
+      });
+      const dots = Array.from(dotsWrap.children);
+
+      const updateActiveDot = () => {
+        const wrapRect = portfolioSlider.getBoundingClientRect();
+        const center = wrapRect.left + wrapRect.width / 2;
+        let closest = 0;
+        let minDist = Infinity;
+        slides.forEach((slide, i) => {
+          const r = slide.getBoundingClientRect();
+          const dist = Math.abs(r.left + r.width / 2 - center);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        dots.forEach((d, i) => d.classList.toggle("active", i === closest));
+      };
+
+      let scrollTimer;
+      portfolioSlider.addEventListener("scroll", () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateActiveDot, 80);
+      }, { passive: true });
+
+      const scrollByOneSlide = (dir) => {
+        const amount = slides[0].getBoundingClientRect().width + 20;
+        portfolioSlider.scrollBy({ left: dir * amount, behavior: "smooth" });
+      };
+      prevBtn.addEventListener("click", () => scrollByOneSlide(-1));
+      nextBtn.addEventListener("click", () => scrollByOneSlide(1));
+
+      updateActiveDot();
+      window.addEventListener("resize", updateActiveDot);
+    }
 
     const scrollHint = document.getElementById("scrollHint");
     const heroSection = document.querySelector(".hero-visual");
