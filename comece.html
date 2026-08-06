@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico em 20 segundos | Benny Soluções Web</title>
+  <meta name="description" content="Responda 3 perguntas rápidas e veja os casos parecidos com o seu negócio — e o que dá para fazer pelo seu site.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #ffb800;
+      --gold-soft: rgba(255, 184, 0, 0.22);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background-image:
+        linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- topo ---------- */
+    .topo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(0, 0, 0, 0.85);
+    }
+    .topo img { display: block; height: auto; width: auto; max-height: 2.6rem; max-width: 190px; }
+    .topo__pular {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .topo__pular:hover { color: var(--gold); }
+
+    /* ---------- palco ---------- */
+    .palco {
+      flex: 1;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .tela { display: none; animation: entra 0.45s ease both; }
+    .tela.ativa { display: block; }
+    @keyframes entra {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tela { animation: none; }
+    }
+
+    /* ---------- progresso ---------- */
+    .progresso { margin-bottom: 1.6rem; }
+    .progresso[hidden] { display: none; }
+    .progresso__topo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.55rem;
+    }
+    .progresso__contador {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 184, 0, 0.85);
+    }
+    .btn-voltar {
+      background: none;
+      border: 0;
+      color: rgba(255, 255, 255, 0.45);
+      font: inherit;
+      font-size: 0.78rem;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      transition: color 0.2s ease;
+    }
+    .btn-voltar:hover { color: #fff; }
+    .progresso__trilho {
+      height: 3px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    .progresso__barra {
+      height: 100%;
+      width: 0;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #cc9200, var(--gold));
+      transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ---------- textos ---------- */
+    .selo {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--gold-soft);
+      border-radius: 99px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(255, 184, 0, 0.06);
+    }
+    h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
+    h1 { font-size: 2rem; font-weight: 900; }
+    h2 { font-size: 1.55rem; font-weight: 800; }
+    .dourado {
+      background: linear-gradient(110deg, #fff 5%, var(--gold) 55%, #cc9200 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .apoio {
+      margin-top: 0.9rem;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .apoio strong { color: #fff; font-weight: 600; }
+    @media (min-width: 640px) {
+      h1 { font-size: 2.6rem; }
+      h2 { font-size: 1.9rem; }
+      .palco { padding-top: 2.5rem; }
+    }
+
+    /* ---------- opções ---------- */
+    .opcoes {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .opcao {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      width: 100%;
+      padding: 1.05rem 1.15rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      line-height: 1.35;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .opcao:hover { border-color: rgba(255, 184, 0, 0.55); background: rgba(255, 184, 0, 0.07); }
+    .opcao:active { transform: scale(0.99); }
+    .opcao.escolhida {
+      border-color: var(--gold);
+      background: rgba(255, 184, 0, 0.14);
+      box-shadow: 0 0 22px rgba(255, 184, 0, 0.18);
+    }
+    .opcao__icone {
+      flex-shrink: 0;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.6rem;
+      background: rgba(255, 184, 0, 0.12);
+      font-size: 1.1rem;
+    }
+    .opcoes.travada .opcao { pointer-events: none; opacity: 0.45; }
+    .opcoes.travada .opcao.escolhida { opacity: 1; }
+
+    /* ---------- espelho ---------- */
+    .espelho {
+      margin-top: 1.15rem;
+      padding: 1rem 1.15rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(255, 184, 0, 0.06);
+      border-radius: 0 0.6rem 0.6rem 0;
+      font-size: 0.98rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.92);
+      animation: entra 0.35s ease both;
+    }
+    .espelho[hidden] { display: none; }
+
+    /* ---------- botões ---------- */
+    .btn-ouro {
+      display: block;
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      border: 0;
+      border-radius: 0.85rem;
+      background: var(--gold);
+      color: #000;
+      font: inherit;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .btn-ouro:hover {
+      background: #ffc933;
+      box-shadow: 0 0 28px rgba(255, 184, 0, 0.45);
+      transform: translateY(-1px);
+    }
+    .link-discreto {
+      display: block;
+      margin-top: 1.1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .link-discreto:hover { color: var(--gold); }
+    .tempo {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .tempo::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 99px;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    /* ---------- resultado ---------- */
+    .diagnostico {
+      margin-top: 1.4rem;
+      padding: 1.3rem;
+      border-radius: 1rem;
+      border: 1px solid var(--gold-soft);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .diagnostico h2 { font-size: 1.25rem; }
+    .diagnostico p { margin-top: 0.75rem; color: rgba(255, 255, 255, 0.78); line-height: 1.6; font-size: 0.97rem; }
+    .divisor {
+      height: 1px;
+      margin: 2.2rem 0 1.4rem;
+      background: linear-gradient(90deg, transparent, rgba(255, 184, 0, 0.5), transparent);
+    }
+    .titulo-casos { font-size: 1.05rem; font-weight: 700; }
+    .titulo-casos span { color: var(--gold); }
+    .casos {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+    @media (min-width: 640px) {
+      .casos { grid-template-columns: repeat(3, 1fr); }
+    }
+    .caso {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0a0a0a;
+      text-decoration: none;
+      color: #fff;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .caso:hover { border-color: rgba(255, 184, 0, 0.5); transform: translateY(-2px); }
+    .caso img {
+      display: block;
+      width: 100%;
+      height: 9.5rem;
+      object-fit: cover;
+    }
+    .caso__texto { padding: 0.9rem 1rem 1.05rem; }
+    .caso__texto h3 { font-size: 0.98rem; font-weight: 700; color: var(--gold); }
+    .caso__texto p { margin-top: 0.3rem; font-size: 0.83rem; line-height: 1.5; color: rgba(255, 255, 255, 0.65); }
+    .caso__ver { margin-top: 0.6rem; display: inline-block; font-size: 0.78rem; font-weight: 700; color: #fff; }
+    .caso__ver::after { content: " →"; color: var(--gold); }
+    .fecho { margin-top: 2rem; }
+    .fecho__linha {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .assinatura {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+    .assinatura a { color: rgba(255, 255, 255, 0.55); text-decoration: none; }
+    .assinatura a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <a href="/" aria-label="Benny Soluções Web — início">
+      <img src="assets/Logo.png?v=2" alt="Benny Soluções Web" width="1047" height="448" decoding="async">
+    </a>
+    <a class="topo__pular" href="/#portfolio">ver tudo direto</a>
+  </header>
+
+  <main class="palco">
+    <div class="progresso" id="progresso" hidden>
+      <div class="progresso__topo">
+        <span class="progresso__contador" id="contador">Pergunta 1 de 3</span>
+        <button type="button" class="btn-voltar" id="btnVoltar">← voltar</button>
+      </div>
+      <div class="progresso__trilho"><div class="progresso__barra" id="barra"></div></div>
+    </div>
+
+    <!-- ===== INTRO ===== -->
+    <section class="tela ativa" data-tela="intro">
+      <span class="selo">Diagnóstico rápido</span>
+      <h1>Antes de te mostrar meus trabalhos, <span class="dourado">deixa eu fazer 3 perguntas.</span></h1>
+      <p class="apoio">
+        No final eu te mostro <strong>os casos parecidos com o seu</strong> — e o que eu faria
+        no seu lugar para o site parar de ser enfeite e começar a trazer cliente.
+      </p>
+      <p class="tempo">Leva 20 segundos. Sem cadastro, sem e-mail.</p>
+      <div class="opcoes">
+        <button type="button" class="btn-ouro" id="btnComecar">Começar →</button>
+      </div>
+      <a class="link-discreto" href="/#portfolio">prefiro ver o portfólio inteiro</a>
+    </section>
+
+    <!-- ===== PERGUNTA 1 ===== -->
+    <section class="tela" data-tela="q1">
+      <h2>O que você <span class="dourado">vende hoje?</span></h2>
+      <p class="apoio">Assim eu te mostro só o que faz sentido pro seu tipo de negócio.</p>
+      <div class="opcoes" id="opcoesSegmento"></div>
+    </section>
+
+    <!-- ===== PERGUNTA 2 ===== -->
+    <section class="tela" data-tela="q2">
+      <h2>Como as pessoas <span class="dourado">te acham hoje?</span></h2>
+      <p class="apoio">Pode ser sincero. É aqui que quase todo negócio perde dinheiro.</p>
+      <div class="opcoes" id="opcoesCanal"></div>
+      <p class="espelho" id="espelho" hidden></p>
+    </section>
+
+    <!-- ===== PERGUNTA 3 ===== -->
+    <section class="tela" data-tela="q3">
+      <h2>Se der certo, <span class="dourado">quando você quer estar no ar?</span></h2>
+      <p class="apoio">Última pergunta. Serve pra eu saber se dá pra encaixar na fila dessa semana.</p>
+      <div class="opcoes" id="opcoesPrazo"></div>
+    </section>
+
+    <!-- ===== RESULTADO ===== -->
+    <section class="tela" data-tela="resultado">
+      <span class="selo">Seu diagnóstico</span>
+      <div class="diagnostico">
+        <h2 id="diagTitulo"></h2>
+        <p id="diagTexto"></p>
+        <p id="diagPrazo"></p>
+      </div>
+
+      <div class="divisor"></div>
+
+      <p class="titulo-casos">Olha <span id="casosQtd">3 casos</span> parecidos com o seu:</p>
+      <div class="casos" id="casos"></div>
+
+      <div class="fecho">
+        <p class="fecho__linha" id="fechoLinha"></p>
+        <a class="btn-ouro" id="ctaWhats" href="#" target="_blank" rel="noopener noreferrer"></a>
+        <a class="link-discreto" href="/#portfolio">ver todos os trabalhos</a>
+      </div>
+
+      <p class="assinatura">
+        Benny Soluções Web — <a href="/">bennysolucoesweb.com.br</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const WHATSAPP = "5511959487115";
+
+    /* ---------------- projetos ---------------- */
+    const PROJETOS = {
+      ingrid: {
+        titulo: "Nail Designer",
+        resumo: "Agenda cheia via WhatsApp, sem depender do direct.",
+        img: "assets/portfolio-ingrid.jpg"
+      },
+      geise: {
+        titulo: "Confeitaria",
+        resumo: "Catálogo de doces com pedido direto no WhatsApp.",
+        img: "assets/portfolio-geise.jpg"
+      },
+      cardapio: {
+        titulo: "Cardápio Digital",
+        resumo: "Cardápio que vira pedido em dois toques.",
+        img: "assets/portfolio-cardapio.jpg"
+      },
+      suzucap: {
+        titulo: "Oficina Mecânica",
+        resumo: "Serviços claros e agendamento sem ligação.",
+        img: "assets/portfolio-suzucap.jpg"
+      },
+      "uber-vip": {
+        titulo: "Motorista Executivo",
+        resumo: "Página de captação para corrida particular.",
+        img: "assets/portfolio-uber-vip.jpg"
+      },
+      igreja: {
+        titulo: "Institucional",
+        resumo: "Autoridade, informação e contato num lugar só.",
+        img: "assets/portfolio-igreja.jpg"
+      }
+    };
+
+    /* ---------------- pergunta 1 ---------------- */
+    const SEGMENTOS = [
+      { id: "beleza", icone: "💅", label: "Estética e beleza", frase: "trabalho com estética e beleza", casos: ["ingrid", "geise", "cardapio"] },
+      { id: "saude", icone: "🩺", label: "Saúde e consultório", frase: "tenho um consultório", casos: ["ingrid", "igreja", "suzucap"] },
+      { id: "comida", icone: "🍔", label: "Comida e delivery", frase: "trabalho com comida e delivery", casos: ["cardapio", "geise", "ingrid"] },
+      { id: "tecnico", icone: "🔧", label: "Serviço técnico (obra, reforma, manutenção)", frase: "presto serviço técnico", casos: ["suzucap", "uber-vip", "ingrid"] },
+      { id: "loja", icone: "🛍️", label: "Loja ou produto", frase: "tenho uma loja", casos: ["geise", "cardapio", "suzucap"] },
+      { id: "outro", icone: "✨", label: "Outra coisa", frase: "tenho um negócio próprio", casos: ["igreja", "uber-vip", "ingrid"] }
+    ];
+
+    /* ---------------- pergunta 2 ---------------- */
+    const CANAIS = [
+      {
+        id: "insta",
+        icone: "📱",
+        label: "Só pelo Instagram",
+        espelho: "Você está alugando sua audiência. Se a conta cair amanhã, o faturamento cai junto.",
+        frase: "hoje só me acham pelo Instagram",
+        titulo: "Todo o seu negócio está pendurado numa conta que não é sua.",
+        texto: "O Instagram é ótimo pra chamar atenção — péssimo pra fechar. O perfil não aparece no Google, não organiza preço, não responde de madrugada. O site resolve isso: ele trabalha enquanto você atende, e transforma quem te achou em conversa no WhatsApp."
+      },
+      {
+        id: "site-fraco",
+        icone: "🕸️",
+        label: "Tenho um site, mas ele não traz cliente nenhum",
+        espelho: "Então você tem um panfleto online. E panfleto não vende — vendedor vende.",
+        frase: "já tenho site, mas ele não traz cliente",
+        titulo: "Seu site não está quebrado. Ele só não foi feito pra vender.",
+        texto: "Quase sempre o problema é o mesmo: bonito, lento e sem caminho. A pessoa entra, lê, gosta — e não sabe qual o próximo passo. Site que vende tem uma promessa clara em cima, prova no meio e um botão de WhatsApp que persegue a pessoa até o fim."
+      },
+      {
+        id: "indicacao",
+        icone: "🤝",
+        label: "Boca a boca e indicação",
+        espelho: "O melhor cliente do mundo. E o mais imprevisível — você não controla quando ele chega.",
+        frase: "meus clientes vêm de indicação",
+        titulo: "Indicação é ouro. Só que ela chega quando quer.",
+        texto: "Quem te indica manda seu nome — e a pessoa vai te procurar no Google. Se ela não achar nada sério, a indicação esfria ali. Um site profissional confirma o que falaram de você e ainda te dá um segundo canal, que não depende de sorte."
+      },
+      {
+        id: "anuncio",
+        icone: "💸",
+        label: "Pago anúncio, mas o retorno é fraco",
+        espelho: "O problema quase nunca é o anúncio. É pra onde ele manda a pessoa.",
+        frase: "invisto em anúncio e o retorno está fraco",
+        titulo: "Você está pagando pra levar gente até um lugar que não converte.",
+        texto: "Tráfego caro em página fraca é dinheiro queimado. Antes de aumentar a verba, vale arrumar o destino: página rápida, uma oferta só, prova social e um caminho curto até o WhatsApp. O mesmo anúncio passa a render mais sem você gastar um real a mais."
+      }
+    ];
+
+    /* ---------------- pergunta 3 ---------------- */
+    const PRAZOS = [
+      {
+        id: "semana",
+        icone: "🔥",
+        label: "Semana que vem",
+        frase: "quero estar no ar semana que vem",
+        linha: "Dá pra encaixar. Projeto simples entra no ar em 7 dias.",
+        fecho: "Me manda uma mensagem agora que eu te digo hoje mesmo se cabe na fila dessa semana.",
+        cta: "Quero meu orçamento em 24h"
+      },
+      {
+        id: "mes",
+        icone: "📅",
+        label: "Ainda esse mês",
+        frase: "quero estar no ar ainda esse mês",
+        linha: "Prazo confortável. Dá pra fazer bem feito, sem correria.",
+        fecho: "Me chama e em 24h eu te mando a proposta com escopo e prazo fechados.",
+        cta: "Quero meu orçamento em 24h"
+      },
+      {
+        id: "pesquisando",
+        icone: "🔎",
+        label: "Ainda estou pesquisando",
+        frase: "ainda estou pesquisando",
+        linha: "Sem pressa — pesquisar antes é o certo a fazer.",
+        fecho: "Se quiser, me chama e eu te falo de graça o que eu mudaria no seu caso. Sem compromisso e sem enrolação.",
+        cta: "Quero uma opinião sobre o meu caso"
+      }
+    ];
+
+    /* ---------------- estado ---------------- */
+    const escolha = { segmento: null, canal: null, prazo: null };
+    const ORDEM = ["intro", "q1", "q2", "q3", "resultado"];
+    let atual = 0;
+
+    const telas = {};
+    document.querySelectorAll(".tela").forEach(function (el) { telas[el.dataset.tela] = el; });
+    const progresso = document.getElementById("progresso");
+    const contador = document.getElementById("contador");
+    const barra = document.getElementById("barra");
+    const espelho = document.getElementById("espelho");
+
+    function mostrar(indice) {
+      atual = indice;
+      const nome = ORDEM[indice];
+      Object.keys(telas).forEach(function (chave) {
+        telas[chave].classList.toggle("ativa", chave === nome);
+      });
+
+      const ehPergunta = indice >= 1 && indice <= 3;
+      progresso.hidden = !ehPergunta;
+      if (ehPergunta) {
+        contador.textContent = "Pergunta " + indice + " de 3";
+        barra.style.width = (indice / 3) * 100 + "%";
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function criarOpcoes(container, itens, aoEscolher) {
+      itens.forEach(function (item) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opcao";
+        btn.innerHTML =
+          '<span class="opcao__icone" aria-hidden="true">' + item.icone + "</span>" +
+          "<span>" + item.label + "</span>";
+        btn.addEventListener("click", function () {
+          container.querySelectorAll(".opcao").forEach(function (o) { o.classList.remove("escolhida"); });
+          btn.classList.add("escolhida");
+          aoEscolher(item, container);
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    /* ---------------- perguntas ---------------- */
+    criarOpcoes(document.getElementById("opcoesSegmento"), SEGMENTOS, function (item) {
+      escolha.segmento = item;
+      setTimeout(function () { mostrar(2); }, 180);
+    });
+
+    criarOpcoes(document.getElementById("opcoesCanal"), CANAIS, function (item, container) {
+      escolha.canal = item;
+      espelho.textContent = item.espelho;
+      espelho.hidden = false;
+      container.classList.add("travada");
+      setTimeout(function () {
+        container.classList.remove("travada");
+        espelho.hidden = true;
+        mostrar(3);
+      }, 1700);
+    });
+
+    criarOpcoes(document.getElementById("opcoesPrazo"), PRAZOS, function (item) {
+      escolha.prazo = item;
+      setTimeout(montarResultado, 180);
+    });
+
+    document.getElementById("btnComecar").addEventListener("click", function () { mostrar(1); });
+
+    document.getElementById("btnVoltar").addEventListener("click", function () {
+      espelho.hidden = true;
+      mostrar(Math.max(0, atual - 1));
+    });
+
+    /* ---------------- resultado ---------------- */
+    function montarResultado() {
+      const seg = escolha.segmento;
+      const canal = escolha.canal;
+      const prazo = escolha.prazo;
+
+      document.getElementById("diagTitulo").textContent = canal.titulo;
+      document.getElementById("diagTexto").textContent = canal.texto;
+      document.getElementById("diagPrazo").textContent = prazo.linha;
+
+      const casos = document.getElementById("casos");
+      casos.innerHTML = "";
+      seg.casos.forEach(function (chave) {
+        const p = PROJETOS[chave];
+        if (!p) return;
+        const a = document.createElement("a");
+        a.className = "caso";
+        a.href = "projeto.html?p=" + chave;
+        a.innerHTML =
+          '<img src="' + p.img + '" alt="Site entregue — ' + p.titulo + '" loading="lazy">' +
+          '<div class="caso__texto">' +
+            "<h3>" + p.titulo + "</h3>" +
+            "<p>" + p.resumo + "</p>" +
+            '<span class="caso__ver">Ver projeto</span>' +
+          "</div>";
+        casos.appendChild(a);
+      });
+      document.getElementById("casosQtd").textContent = seg.casos.length + " casos";
+
+      document.getElementById("fechoLinha").textContent = prazo.fecho;
+
+      const cta = document.getElementById("ctaWhats");
+      cta.textContent = prazo.cta;
+      const msg = ["Vim pelo site", seg.frase, canal.frase, prazo.frase]
+        .map(function (t) { return t.charAt(0).toUpperCase() + t.slice(1) + "."; })
+        .join(" ");
+      cta.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+
+      mostrar(4);
+    }
+  </script>
+</body>
+</html>
