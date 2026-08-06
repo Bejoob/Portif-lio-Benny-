@@ -332,7 +332,7 @@
     <a href="/" aria-label="Benny Soluções Web — início">
       <img src="assets/Logo.png?v=2" alt="Benny Soluções Web" width="1047" height="448" decoding="async">
     </a>
-    <a class="topo__pular" href="/#portfolio">ver tudo direto</a>
+    <a class="topo__pular" href="/#portfolio" data-saida="topo">ver tudo direto</a>
   </header>
 
   <main class="palco">
@@ -356,7 +356,7 @@
       <div class="opcoes">
         <button type="button" class="btn-ouro" id="btnComecar">Começar →</button>
       </div>
-      <a class="link-discreto" href="/#portfolio">prefiro ver o portfólio inteiro</a>
+      <a class="link-discreto" href="/#portfolio" data-saida="intro">prefiro ver o portfólio inteiro</a>
     </section>
 
     <!-- ===== PERGUNTA 1 ===== -->
@@ -398,7 +398,7 @@
       <div class="fecho">
         <p class="fecho__linha" id="fechoLinha"></p>
         <a class="btn-ouro" id="ctaWhats" href="#" target="_blank" rel="noopener noreferrer"></a>
-        <a class="link-discreto" href="/#portfolio">ver todos os trabalhos</a>
+        <a class="link-discreto" href="/#portfolio" data-saida="resultado">ver todos os trabalhos</a>
       </div>
 
       <p class="assinatura">
@@ -409,6 +409,42 @@
 
   <script>
     const WHATSAPP = "5511959487115";
+
+    /* ================================================================
+       MEDIDOR — cole o ID do Google Analytics entre as aspas abaixo
+       (formato G-XXXXXXXXXX). Enquanto estiver vazio, nada é rastreado
+       e nenhum cookie é criado.
+       ================================================================ */
+    const GA_ID = "";
+
+    if (GA_ID) {
+      const tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(tag);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      gtag("js", new Date());
+      gtag("config", GA_ID, { anonymize_ip: true });
+    }
+
+    /* de onde a pessoa veio: ?o=bio | trabalhos | stories | anuncio */
+    const ORIGENS = {
+      bio: "Vim pelo link da bio",
+      trabalhos: "Vim pelo destaque Trabalhos",
+      stories: "Vim pelos stories",
+      anuncio: "Vim pelo anúncio",
+      site: "Vim pelo site"
+    };
+    const params = new URLSearchParams(location.search);
+    const origem = (params.get("o") || params.get("utm_source") || "site").toLowerCase();
+    const origemFrase = ORIGENS[origem] || ORIGENS.site;
+
+    function medir(evento, dados) {
+      const carga = Object.assign({ origem: origem }, dados || {});
+      try { if (GA_ID && window.gtag) gtag("event", evento, carga); } catch (e) {}
+      try { if (window.va) window.va("event", { name: evento, data: carga }); } catch (e) {}
+    }
 
     /* ---------------- projetos ---------------- */
     const PROJETOS = {
@@ -573,11 +609,13 @@
     /* ---------------- perguntas ---------------- */
     criarOpcoes(document.getElementById("opcoesSegmento"), SEGMENTOS, function (item) {
       escolha.segmento = item;
+      medir("funil_pergunta_1", { segmento: item.id });
       setTimeout(function () { mostrar(2); }, 180);
     });
 
     criarOpcoes(document.getElementById("opcoesCanal"), CANAIS, function (item, container) {
       escolha.canal = item;
+      medir("funil_pergunta_2", { canal: item.id });
       espelho.textContent = item.espelho;
       espelho.hidden = false;
       container.classList.add("travada");
@@ -590,15 +628,28 @@
 
     criarOpcoes(document.getElementById("opcoesPrazo"), PRAZOS, function (item) {
       escolha.prazo = item;
+      medir("funil_pergunta_3", { prazo: item.id });
       setTimeout(montarResultado, 180);
     });
 
-    document.getElementById("btnComecar").addEventListener("click", function () { mostrar(1); });
+    document.getElementById("btnComecar").addEventListener("click", function () {
+      medir("funil_comecou");
+      mostrar(1);
+    });
 
     document.getElementById("btnVoltar").addEventListener("click", function () {
       espelho.hidden = true;
       mostrar(Math.max(0, atual - 1));
     });
+
+    /* saídas: quem pula o funil */
+    document.querySelectorAll("[data-saida]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        medir("funil_pulou", { onde: link.dataset.saida });
+      });
+    });
+
+    medir("funil_abriu");
 
     /* ---------------- resultado ---------------- */
     function montarResultado() {
@@ -618,6 +669,9 @@
         const a = document.createElement("a");
         a.className = "caso";
         a.href = "projeto.html?p=" + chave;
+        a.addEventListener("click", function () {
+          medir("projeto_clique", { projeto: chave, segmento: seg.id });
+        });
         a.innerHTML =
           '<img src="' + p.img + '" alt="Site entregue — ' + p.titulo + '" loading="lazy">' +
           '<div class="caso__texto">' +
@@ -633,11 +687,15 @@
 
       const cta = document.getElementById("ctaWhats");
       cta.textContent = prazo.cta;
-      const msg = ["Vim pelo site", seg.frase, canal.frase, prazo.frase]
+      const msg = [origemFrase, seg.frase, canal.frase, prazo.frase]
         .map(function (t) { return t.charAt(0).toUpperCase() + t.slice(1) + "."; })
         .join(" ");
       cta.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+      cta.onclick = function () {
+        medir("whats_clique", { segmento: seg.id, canal: canal.id, prazo: prazo.id });
+      };
 
+      medir("funil_resultado", { segmento: seg.id, canal: canal.id, prazo: prazo.id });
       mostrar(4);
     }
   </script>
