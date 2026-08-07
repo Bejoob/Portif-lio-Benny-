@@ -411,11 +411,18 @@
     const WHATSAPP = "5511959487115";
 
     /* ================================================================
-       MEDIDOR — cole o ID do Google Analytics entre as aspas abaixo
-       (formato G-XXXXXXXXXX). Enquanto estiver vazio, nada é rastreado
-       e nenhum cookie é criado.
+       MEDIDOR
+       1. Cole o ID do Google Analytics entre as aspas do GA_ID
+          (formato G-XXXXXXXXXX). Vazio = nada é rastreado.
+       2. SEM_COOKIES = true mantém a medição sem gravar nada no
+          aparelho de quem visita — não precisa de aviso de cookies.
+          Você continua vendo quantos passaram por cada etapa; o que
+          se perde é saber se é a mesma pessoa voltando.
+       3. Para conferir se está funcionando, abra a página com
+          ?debug=1 no fim da URL e olhe o console do navegador.
        ================================================================ */
     const GA_ID = "";
+    const SEM_COOKIES = true;
 
     if (GA_ID) {
       const tag = document.createElement("script");
@@ -425,7 +432,9 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       gtag("js", new Date());
-      gtag("config", GA_ID, { anonymize_ip: true });
+      gtag("config", GA_ID, SEM_COOKIES
+        ? { anonymize_ip: true, client_storage: "none", ads_data_redaction: true }
+        : { anonymize_ip: true });
     }
 
     /* de onde a pessoa veio: ?o=bio | trabalhos | stories | anuncio */
@@ -440,10 +449,13 @@
     const origem = (params.get("o") || params.get("utm_source") || "site").toLowerCase();
     const origemFrase = ORIGENS[origem] || ORIGENS.site;
 
+    const DEBUG = params.get("debug") === "1";
+
     function medir(evento, dados) {
       const carga = Object.assign({ origem: origem }, dados || {});
       try { if (GA_ID && window.gtag) gtag("event", evento, carga); } catch (e) {}
       try { if (window.va) window.va("event", { name: evento, data: carga }); } catch (e) {}
+      if (DEBUG) console.log("[medidor]", evento, carga, GA_ID ? "→ GA " + GA_ID : "→ GA desligado");
     }
 
     /* ---------------- projetos ---------------- */
