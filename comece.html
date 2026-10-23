@@ -326,6 +326,15 @@
     .assinatura a { color: rgba(255, 255, 255, 0.55); text-decoration: none; }
     .assinatura a:hover { color: var(--gold); }
   </style>
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18516964374"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18516964374');
+  </script>
+  <script defer src="assets/ads.js"></script>
 </head>
 <body>
   <header class="topo">
@@ -453,7 +462,7 @@
 
     function medir(evento, dados) {
       const carga = Object.assign({ origem: origem }, dados || {});
-      try { if (GA_ID && window.gtag) gtag("event", evento, carga); } catch (e) {}
+      try { if (GA_ID && window.gtag) gtag("event", evento, Object.assign({ send_to: GA_ID }, carga)); } catch (e) {}
       try { if (window.va) window.va("event", { name: evento, data: carga }); } catch (e) {}
       if (DEBUG) console.log("[medidor]", evento, carga, GA_ID ? "→ GA " + GA_ID : "→ GA desligado");
     }
