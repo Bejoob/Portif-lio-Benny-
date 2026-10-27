@@ -1,10 +1,10 @@
 {
-  "name": "benny-solucoes-web",
+  "name": "benny-solucoes-web-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.19"
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
   }
 }

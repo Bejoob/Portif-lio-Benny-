@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /projeto.html
 
 Sitemap: https://www.bennysolucoesweb.com.br/sitemap.xml

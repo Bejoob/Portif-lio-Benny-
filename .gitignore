@@ -1,1 +1,7 @@
+.vercel
+.env*
 node_modules/
+_backup/
+_paginas-legado/
+assets/_unused/
+.playwright-mcp/

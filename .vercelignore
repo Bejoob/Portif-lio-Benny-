@@ -1,0 +1,16 @@
+# Arquivos de trabalho que nao devem ir para producao
+_backup/
+_paginas-legado/
+assets/_unused/
+design-system/
+server.mjs
+.claude/
+
+# Token OIDC gerado pelo `vercel link` — nunca publicar
+.env.local
+.env*.local
+
+.playwright-mcp/
+.vercel/
+.gitignore
+

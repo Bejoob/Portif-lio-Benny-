@@ -1,949 +1,641 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criação de Sites em Itapecerica da Serra e Região | Benny Soluções Web</title>
-  <meta name="description" content="Criação de sites profissionais em Itapecerica da Serra e região. Landing pages, cardápios digitais e sites que geram contatos no WhatsApp — no ar em 7 dias.">
-  <meta name="keywords" content="criação de sites itapecerica da serra, site profissional itapecerica da serra, landing page, cardapio digital, empresa local, site para whatsapp, agência de sites itapecerica">
-  <meta name="author" content="Benny Soluções Web">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.bennysolucoesweb.com.br/">
-  <meta property="og:title" content="Criação de Sites em Itapecerica da Serra | No ar em 7 dias">
-  <meta property="og:description" content="Sites profissionais em Itapecerica da Serra e região para negócios que querem vender mais no WhatsApp.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.bennysolucoesweb.com.br/">
-  <meta property="og:image" content="https://www.bennysolucoesweb.com.br/assets/hero-mockup.jpg">
-  <meta property="og:image:width" content="1254">
-  <meta property="og:image:height" content="1254">
-  <meta property="og:locale" content="pt_BR">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Criação de Sites em Itapecerica da Serra | No ar em 7 dias">
-  <meta name="twitter:description" content="Sites profissionais em Itapecerica da Serra e região para negócios que querem vender mais no WhatsApp.">
-  <meta name="twitter:url" content="https://www.bennysolucoesweb.com.br/">
-  <meta name="twitter:image" content="https://www.bennysolucoesweb.com.br/assets/hero-mockup.jpg">
-  <meta name="theme-color" content="#000000">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Benny Soluções Web",
-    "description": "Criação de sites profissionais, landing pages, cardápios digitais e páginas para empresas locais de Itapecerica da Serra e região que querem vender mais no WhatsApp.",
-    "url": "https://www.bennysolucoesweb.com.br/",
-    "image": "https://www.bennysolucoesweb.com.br/assets/hero-mockup.jpg",
-    "telephone": "+5511959487115",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Itapecerica da Serra",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -23.7169,
-      "longitude": -46.8492
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Itapecerica da Serra" },
-      { "@type": "City", "name": "Embu das Artes" },
-      { "@type": "City", "name": "Taboão da Serra" },
-      { "@type": "City", "name": "Cotia" },
-      { "@type": "City", "name": "Embu-Guaçu" },
-      { "@type": "City", "name": "São Lourenço da Serra" },
-      { "@type": "City", "name": "São Paulo" }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/tailwind.css">
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Inter", sans-serif;
-      background: #000000;
-      color: #ffffff;
-    }
-    .texture {
-      background-image: linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 184, 0, 0.22);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .premium-title {
-      background: linear-gradient(110deg, #ffffff 5%, #FFB800 55%, #CC9200 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255, 184, 0, 0.55) 50%, transparent 100%);
-    }
-    .portfolio-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 18%, rgba(0, 0, 0, 0.45) 55%, transparent 85%);
-      pointer-events: none;
-    }
-    .site-header {
-      overflow: visible;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
-    }
-    .site-header__bar {
-      overflow: visible;
-      align-items: center;
-    }
-    .site-logo-link {
-      display: block;
-      overflow: visible;
-      line-height: 0;
-    }
-    .site-logo {
-      display: block;
-      height: auto;
-      width: auto;
-      max-height: 5.75rem;
-      max-width: min(calc(100vw - 4.5rem), 340px);
-      object-fit: contain;
-      object-position: left center;
-    }
-    @media (min-width: 640px) {
-      .site-logo { max-height: 5.25rem; max-width: 400px; }
-    }
-    @media (min-width: 1024px) {
-      .site-logo { max-height: 5rem; max-width: 440px; }
-    }
-    .nav-link {
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-    .nav-link:hover {
-      color: #FFB800;
-    }
-    .btn-gold {
-      background: #FFB800;
-      color: #000000;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .btn-gold:hover {
-      background: #ffc933;
-      box-shadow: 0 0 28px rgba(255, 184, 0, 0.45);
-      transform: translateY(-1px);
-    }
-    .hero-visual__img {
-      width: 100%;
-      height: 118%;
-      top: -11%;
-      left: 0;
-      object-fit: cover;
-      object-position: center 48%;
-    }
-    .scroll-hint {
-      position: absolute;
-      left: 1rem;
-      bottom: 2rem;
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.35rem;
-      color: #FFB800;
-      text-decoration: none;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-    .scroll-hint:hover {
-      color: #ffc933;
-    }
-    .scroll-hint__label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      opacity: 0.9;
-    }
-    .scroll-hint__track {
-      position: relative;
-      width: 1px;
-      height: 2.5rem;
-      overflow: hidden;
-      background: linear-gradient(to top, rgba(255, 184, 0, 0.12), rgba(255, 184, 0, 0.35));
-    }
-    .scroll-hint__track::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: -40%;
-      width: 100%;
-      height: 45%;
-      background: #FFB800;
-      box-shadow: 0 0 10px rgba(255, 184, 0, 0.65);
-      animation: scroll-hint-line 1.6s ease-in-out infinite;
-    }
-    .scroll-hint__arrows {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -0.1rem;
-    }
-    .scroll-hint__icon {
-      display: block;
-      height: 1.65rem;
-      width: 1.65rem;
-      margin-bottom: -0.4rem;
-      animation: scroll-hint-arrow 1.6s ease-in-out infinite;
-    }
-    .scroll-hint__icon--2 {
-      animation-delay: 0.55s;
-    }
-    .scroll-hint.is-hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    @keyframes scroll-hint-arrow {
-      0%   { transform: translateY(10px); opacity: 0; }
-      35%  { opacity: 1; }
-      70%  { transform: translateY(-10px); opacity: 0; }
-      100% { transform: translateY(-10px); opacity: 0; }
-    }
-    @keyframes scroll-hint-line {
-      0%   { top: 95%; opacity: 0; }
-      25%  { opacity: 1; }
-      75%  { top: -45%; opacity: 1; }
-      100% { top: -45%; opacity: 0; }
-    }
-    @media (min-width: 640px) {
-      .scroll-hint { left: 1.5rem; bottom: 2.5rem; }
-      .scroll-hint__track { height: 3rem; }
-      .scroll-hint__icon { height: 1.85rem; width: 1.85rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-hint__icon,
-      .scroll-hint__track::after { animation: none; }
-      .scroll-hint__icon { opacity: 1; transform: none; }
-      .hero-content { animation: none; }
-    }
-    /* Hero content entrance */
-    .hero-content {
-      animation: hero-fade-in 1.1s ease both;
-    }
-    @keyframes hero-fade-in {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    /* "Mais Popular" badge */
-    .badge-popular {
-      background: linear-gradient(110deg, #FFB800, #CC9200);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-    }
-    /* Star ratings */
-    .star-row svg { fill: #FFB800; }
-    /* Icon circle shared utility */
-    .icon-circle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 0.5rem;
-      background: rgba(255, 184, 0, 0.08);
-      flex-shrink: 0;
-    }
-    /* Portfolio slider */
-    .portfolio-slider {
-      display: flex;
-      gap: 1.25rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding: 0.25rem 0.25rem 1rem;
-      margin: -0.25rem -0.25rem 0;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .portfolio-slider::-webkit-scrollbar { display: none; }
-    .portfolio-slide {
-      flex: 0 0 85%;
-      scroll-snap-align: center;
-    }
-    @media (min-width: 640px) {
-      .portfolio-slide { flex-basis: 65%; }
-    }
-    @media (min-width: 1024px) {
-      .portfolio-slide { flex-basis: 44%; }
-    }
-    .portfolio-nav-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      flex-shrink: 0;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 184, 0, 0.4);
-      background: rgba(255, 184, 0, 0.06);
-      color: #FFB800;
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
-    .portfolio-nav-btn:hover {
-      background: rgba(255, 184, 0, 0.16);
-    }
-    .portfolio-nav-btn:active {
-      transform: scale(0.94);
-    }
-    .portfolio-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 184, 0, 0.25);
-      transition: background 0.2s ease, width 0.2s ease;
-    }
-    .portfolio-dot.active {
-      width: 22px;
-      background: #FFB800;
-    }
-  </style>
-  <!-- Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18516964374"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18516964374');
-  </script>
-  <script defer src="assets/ads.js"></script>
-</head>
-<body class="antialiased">
-  <header class="site-header fixed top-0 z-50 w-full">
-    <div class="site-header__bar mx-auto flex max-w-7xl justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-4 lg:px-10">
-      <a href="#inicio" class="site-logo-link shrink-0" aria-label="Benny Soluções Web - Início">
-        <img src="assets/Logo.png?v=2" alt="Benny Soluções Web" class="site-logo" width="1047" height="448" decoding="async">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="Benny Soluções Web: sites estratégicos para negócios locais, com design, performance e foco em conversão pelo WhatsApp."
+    />
+    <link rel="canonical" href="https://www.bennysolucoesweb.com.br/" />
+
+    <meta property="og:title" content="Benny Soluções Web | Sites que vendem" />
+    <meta
+      property="og:description"
+      content="Transformamos visitas em oportunidades reais com sites estratégicos, rápidos e feitos para converter."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Benny Soluções Web" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://www.bennysolucoesweb.com.br/" />
+    <meta property="og:image" content="https://www.bennysolucoesweb.com.br/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Benny Soluções Web" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Benny Soluções Web | Sites que vendem" />
+    <meta name="twitter:description" content="Sites estratégicos para negócios locais, com foco em conversão pelo WhatsApp." />
+    <meta name="twitter:image" content="https://www.bennysolucoesweb.com.br/assets/og-image.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <title>Benny Soluções Web | Sites que vendem</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Benny Soluções Web",
+        "description": "Criação de sites estratégicos para negócios locais, com design, performance e foco em conversão pelo WhatsApp.",
+        "url": "https://www.bennysolucoesweb.com.br/",
+        "image": "https://www.bennysolucoesweb.com.br/assets/og-image.jpg",
+        "logo": "https://www.bennysolucoesweb.com.br/favicon-192.png",
+        "telephone": "+5511959487115",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Itapecerica da Serra",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "areaServed": "BR",
+        "sameAs": ["https://www.instagram.com/benny.solucoes.web/"]
+      }
+    </script>
+
+    <!-- defer preserva a ordem entre si: gsap -> plugin -> nosso script -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <div class="loader" aria-hidden="true">
+      <div class="loader__top">
+        <span>BENNY / SOLUÇÕES WEB</span>
+        <span>CARREGANDO EXPERIÊNCIA</span>
+      </div>
+      <div class="loader__visual">
+        <div class="loader__mark">
+          <img src="logo-benny.jpeg" alt="" width="1250" height="1250" />
+        </div>
+        <div class="loader__orbit"></div>
+      </div>
+      <div class="loader__counter"><span>00</span><small>%</small></div>
+      <div class="loader__line"><span></span></div>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Benny Soluções Web, ir para o início">
+        <img src="logo-benny.jpeg" alt="" width="1250" height="1250" />
+        <span>BENNY<small>SOLUÇÕES WEB</small></span>
       </a>
 
-      <nav class="hidden items-center gap-7 text-[0.95rem] text-white/95 lg:flex" aria-label="Principal">
-        <a href="#inicio" class="nav-link">Home</a>
-        <a href="#pacotes" class="nav-link">Serviços</a>
-        <a href="#para-quem" class="nav-link">Para quem</a>
-        <a href="#portfolio" class="nav-link">Portfólio</a>
-        <a href="#contato" class="nav-link">Contato</a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Processo</a>
       </nav>
 
-      <a href="#contato" class="btn-gold hidden rounded-lg px-5 py-2.5 text-sm font-bold lg:inline-block">Fale conosco</a>
+      <a class="pill pill--light header-cta" href="/comece.html?o=site">
+        Falar sobre meu site
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+      </a>
 
-      <button id="menuBtn" class="shrink-0 rounded-lg border border-white/20 p-2.5 text-white lg:hidden" aria-label="Abrir menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-panel">
+        <span>Menu</span>
+        <i></i><i></i>
       </button>
-    </div>
+    </header>
 
-    <div id="mobileMenu" class="hidden border-t border-white/10 bg-black/95 px-5 pb-5 lg:hidden">
-      <div class="flex flex-col gap-3 pt-4 text-sm text-white/90">
-        <a href="#inicio" class="nav-link py-1">Home</a>
-        <a href="#pacotes" class="nav-link py-1">Serviços</a>
-        <a href="#para-quem" class="nav-link py-1">Para quem</a>
-        <a href="#portfolio" class="nav-link py-1">Portfólio</a>
-        <a href="#contato" class="nav-link py-1">Contato</a>
-        <a href="#contato" class="btn-gold mt-2 rounded-lg px-5 py-3 text-center text-sm font-bold">Fale conosco</a>
+    <div class="menu-panel" id="menu-panel" aria-hidden="true">
+      <div class="menu-panel__meta">
+        <span>MENU / 2026</span>
+        <span>bennysolucoesweb.com.br</span>
+      </div>
+      <nav aria-label="Navegação móvel">
+        <a href="#inicio"><span>01</span>Início</a>
+        <a href="#sobre"><span>02</span>Sobre</a>
+        <a href="#projetos"><span>03</span>Projetos</a>
+        <a href="#servicos"><span>04</span>Serviços</a>
+        <a href="#processo"><span>05</span>Processo</a>
+        <a href="#contato"><span>06</span>Contato</a>
+      </nav>
+      <div class="menu-panel__footer">
+        <a href="https://www.instagram.com/benny.solucoes.web/" target="_blank" rel="noreferrer">Instagram <svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></a>
+        <span>Itapecerica da Serra, SP</span>
       </div>
     </div>
-  </header>
 
-  <main id="inicio">
-    <!-- =============================== HERO =============================== -->
-    <section class="hero-visual relative w-full overflow-hidden bg-black" aria-label="Apresentação">
-      <div class="relative h-[min(90vh,820px)] w-full sm:h-[min(92vh,860px)]">
-        <picture>
-          <source srcset="assets/hero-mockup.webp" type="image/webp">
-          <img
-            src="assets/hero-mockup.jpg"
-            alt="Benny Soluções Web — identidade visual premium em dourado e preto"
-            class="hero-visual__img absolute"
-            width="1254"
-            height="1254"
-            fetchpriority="high"
-          />
-        </picture>
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black"></div>
+    <main id="conteudo">
+      <section class="hero hero--video" id="inicio">
+        <div class="hero__stage">
+          <div class="hero-video__media" aria-hidden="true">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/projects/hero-poster.jpg">
+              <source src="assets/projects/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="hero-video__overlay" aria-hidden="true"></div>
+          <div class="hero__grid" aria-hidden="true"></div>
+          <div class="noise" aria-hidden="true"></div>
+          <div class="hero-video__frame" aria-hidden="true"></div>
+          <div class="hero-video__meta" aria-hidden="true">
+            <span>SHOWREEL / 008S</span>
+            <span>PLAYING / LOOP</span>
+          </div>
 
-        <!-- Hero text overlay -->
-        <div class="hero-content absolute inset-0 z-10 flex flex-col items-center justify-end pl-12 pr-4 pb-16 text-center sm:px-8 sm:pb-20 lg:pb-24">
-          <h1 class="premium-title max-w-3xl text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">
-            Seu negócio<br>na internet em 7 dias
-          </h1>
-          <p class="mt-3 max-w-2xl text-sm text-white/70 sm:text-base">Criação de sites profissionais em Itapecerica da Serra e região</p>
+          <div class="hero__side hero__side--left">
+            <span>DESENVOLVIMENTO WEB</span>
+            <span>ITAPECERICA DA SERRA, SP</span>
+          </div>
+          <div class="hero__side hero__side--right">
+            <span>SCROLL PARA EXPLORAR</span>
+            <span class="scroll-dot"></span>
+          </div>
+
+          <div class="hero__content">
+            <div class="hero__lead">
+              <p class="eyebrow">Estratégia + design + código</p>
+              <h1 class="hero__title" aria-label="Seu site deveria vender, não só existir">
+                <span class="title-line"><span>Seu site</span></span>
+                <span class="title-line title-line--indent"><span>deveria vender,</span></span>
+                <span class="title-line"><span>não só existir.</span></span>
+              </h1>
+            </div>
+            <div class="hero__bottom">
+              <p>
+                Transformamos visitas em oportunidades reais com experiências
+                digitais construídas para gerar confiança e ação.
+              </p>
+              <div class="hero__actions">
+                <a class="pill pill--gold" href="#projetos">Ver projetos</a>
+                <a class="text-link" href="#sobre">Conhecer a Benny <span><svg class="ico-seta ico-seta--baixo" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__status" aria-hidden="true">
+            <span>ONLINE</span>
+            <span>FOCO EM CONVERSÃO</span>
+            <span>BRASIL / REMOTO</span>
+          </div>
+
+          <div class="hero__transition-wash" aria-hidden="true">
+            <span>ESTRATÉGIA</span><span>DESIGN</span><span>CÓDIGO</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto section" id="sobre">
+        <div class="section-index reveal">
+          <span>01</span>
+          <span>O que nos move</span>
+        </div>
+        <div class="manifesto__content">
+          <h2 class="display-title reveal">
+            Não é só um site.<br />
+            <em>É seu melhor vendedor</em><br />
+            trabalhando online.
+          </h2>
+          <div class="manifesto__copy reveal">
+            <p>
+              A Benny cria presenças digitais que organizam sua oferta,
+              elevam a percepção da sua marca e conduzem o visitante até a ação.
+            </p>
+            <p>
+              Sem páginas genéricas. Cada decisão, da primeira frase ao botão do
+              WhatsApp, existe para aproximar o seu negócio do próximo cliente.
+            </p>
+            <a class="arrow-link" href="#servicos">Descobrir como fazemos <span><svg class="ico-seta ico-seta--baixo" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></span></a>
+          </div>
         </div>
 
-        <a href="#para-quem" class="scroll-hint" id="scrollHint" aria-label="Rolar para ver mais conteúdo">
-          <span class="scroll-hint__arrows" aria-hidden="true">
-            <svg class="scroll-hint__icon scroll-hint__icon--1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-            </svg>
-            <svg class="scroll-hint__icon scroll-hint__icon--2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-            </svg>
-          </span>
-          <span class="scroll-hint__track" aria-hidden="true"></span>
-          <span class="scroll-hint__label">Arraste para cima</span>
-        </a>
+        <div class="manifesto__profile">
+          <figure class="about-portrait reveal">
+            <div class="about-portrait__media">
+              <img src="assets/projects/foto-benny.webp" alt="Retrato de Benny, fundador e desenvolvedor da Benny Soluções Web" width="1024" height="1539" loading="lazy" decoding="async" />
+              <span aria-hidden="true">BENNY / 2026</span>
+            </div>
+            <figcaption>Fundador, estrategista e desenvolvedor</figcaption>
+          </figure>
+          <div class="about-profile__copy reveal">
+            <span class="profile-kicker">Por trás da Benny</span>
+            <h3>Estratégia de negócio com execução de ponta a ponta.</h3>
+            <p>
+              Cada projeto nasce de uma conversa real sobre o negócio. Eu uno
+              posicionamento, direção visual e desenvolvimento para transformar
+              o que torna sua marca especial em uma experiência que o cliente entende e escolhe.
+            </p>
+            <a class="arrow-link" href="https://www.instagram.com/benny.solucoes.web/" target="_blank" rel="noreferrer">Acompanhar no Instagram <span><svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="conversion-map reveal" aria-label="Jornada da conversão: atenção, confiança e ação">
+          <div class="conversion-map__line"></div>
+          <article>
+            <span>01</span>
+            <strong>Atenção</strong>
+            <small>Mensagem clara e visual que interrompe a rolagem.</small>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Confiança</strong>
+            <small>Provas, estrutura e conteúdo que eliminam dúvidas.</small>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Ação</strong>
+            <small>Um caminho simples até o orçamento no WhatsApp.</small>
+          </article>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Sites que vendem</span><i></i><span>Design com propósito</span><i></i><span>WhatsApp integrado</span><i></i><span>Performance real</span><i></i>
+          <span>Sites que vendem</span><i></i><span>Design com propósito</span><i></i><span>WhatsApp integrado</span><i></i><span>Performance real</span><i></i>
+        </div>
       </div>
-    </section>
 
-    <div class="texture">
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== PARA QUEM =============================== -->
-    <section id="para-quem" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Para quem é</h2>
-        <p class="mt-3 text-white/75">Soluções ideais para quem precisa atrair clientes e fechar mais pelo WhatsApp.</p>
-      </div>
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <circle cx="6" cy="6" r="3"/>
-              <circle cx="6" cy="18" r="3"/>
-              <line stroke-linecap="round" x1="20" y1="4" x2="8.12" y2="15.88"/>
-              <line stroke-linecap="round" x1="14.47" y1="14.48" x2="20" y2="20"/>
-              <line stroke-linecap="round" x1="8.12" y1="8.12" x2="12" y2="12"/>
-            </svg>
+      <section class="motion-story" id="projetos" aria-label="Da estratégia à publicação">
+        <div class="motion-story__stage">
+          <div class="motion-story__top">
+            <span>TRABALHO EM MOVIMENTO</span>
+            <span class="motion-story__counter">01 / 04</span>
           </div>
-          <h3 class="text-xl font-bold text-gold">Barbearias</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Página de agendamento e divulgação de preços que atrai novos clientes e facilita contato pelo WhatsApp.</p>
-        </article>
-
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-              <line stroke-linecap="round" x1="6" y1="1" x2="6" y2="4"/>
-              <line stroke-linecap="round" x1="10" y1="1" x2="10" y2="4"/>
-              <line stroke-linecap="round" x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
+          <div class="motion-story__intro">
+            <span class="kicker">SITES REAIS, NO AR</span>
+            <h2>Cada projeto<br /><em>em movimento.</em></h2>
+            <p>Role para percorrer as presenças digitais que já estão trabalhando pelos seus donos.</p>
           </div>
-          <h3 class="text-xl font-bold text-gold">Restaurantes e lanchonetes</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Cardápio digital com fotos, destaques do dia e botão de pedido direto — sem comissão de delivery.</p>
-        </article>
 
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 22V10M21 22V10M3 10l9-8 9 8M9 22V14h6v8"/>
-            </svg>
+          <div class="motion-story__canvas">
+            <article class="motion-card" data-cursor="Ver" data-scene="0">
+              <div class="motion-card__bar"><i></i><i></i><i></i><span>01 / SUZUCAP</span></div>
+              <img src="assets/projects/suzucap.png" alt="Site da Suzucap, oficina especialista em Suzuki" width="1280" height="720" loading="lazy" decoding="async" />
+            </article>
+            <article class="motion-card" data-cursor="Ver" data-scene="1">
+              <div class="motion-card__bar"><i></i><i></i><i></i><span>02 / CHÁCARA TERRACOTA</span></div>
+              <img src="assets/projects/chacara-terracota.webp" alt="Site da Chácara Terracota, espaço para eventos em Mogi das Cruzes" width="1265" height="720" loading="lazy" decoding="async" />
+            </article>
+            <article class="motion-card" data-cursor="Ver" data-scene="2">
+              <div class="motion-card__bar"><i></i><i></i><i></i><span>03 / AMÉRICA EVENTOS</span></div>
+              <img src="assets/projects/america-eventos.webp" alt="Site da América Eventos Gastronômicos, buffet para eventos" width="1265" height="720" loading="lazy" decoding="async" />
+            </article>
+            <article class="motion-card" data-cursor="Ver" data-scene="3">
+              <div class="motion-card__bar"><i></i><i></i><i></i><span>04 / DARIANE NICOLLETTE</span></div>
+              <img src="assets/projects/dariane-nicollette.webp" alt="Site da Dariane Nicollette, maquiadora profissional" width="1265" height="720" loading="lazy" decoding="async" />
+            </article>
+            <article class="motion-card" data-cursor="Ver" data-scene="4">
+              <div class="motion-card__bar"><i></i><i></i><i></i><span>05 / AEJ MÓVEIS</span></div>
+              <img src="assets/projects/aej-moveis.png" alt="Site da AEJ Móveis Exclusivos, marcenaria sob medida" width="1280" height="720" loading="lazy" decoding="async" />
+            </article>
           </div>
-          <h3 class="text-xl font-bold text-gold">Igrejas e eventos</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Agenda de cultos, informações sobre a comunidade e divulgação de eventos com inscrições online.</p>
-        </article>
 
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13l1.5-4.5A2 2 0 016.4 7h11.2a2 2 0 011.9 1.5L21 13"/>
-              <rect x="3" y="13" width="18" height="5" rx="1.5"/>
-              <circle cx="7.5" cy="18.5" r="1.5"/>
-              <circle cx="16.5" cy="18.5" r="1.5"/>
-            </svg>
+          <ol class="motion-story__steps">
+            <li class="is-active"><span>01</span><strong>Suzucap</strong></li>
+            <li><span>02</span><strong>Chácara Terracota</strong></li>
+            <li><span>03</span><strong>América Eventos</strong></li>
+            <li><span>04</span><strong>Dariane Nicollette</strong></li>
+            <li><span>05</span><strong>AEJ Móveis</strong></li>
+          </ol>
+          <div class="motion-story__progress" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
+
+      <section class="services section" id="servicos">
+        <div class="section-index reveal">
+          <span>02</span>
+          <span>Serviços integrados</span>
+        </div>
+        <div class="services__heading reveal">
+          <h2 class="display-title">Tudo que sua presença digital precisa. <em>Em uma parceria.</em></h2>
+          <p>Do posicionamento à publicação, uma visão única mantém cada etapa alinhada ao objetivo do seu negócio.</p>
+        </div>
+
+        <div class="services-list">
+          <article class="service-item is-open reveal">
+            <button type="button" data-cursor="Abrir" aria-expanded="true">
+              <span class="service-item__number">01</span>
+              <span class="service-item__title">Landing pages</span>
+              <span class="service-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="service-item__panel">
+              <p>Páginas focadas em uma oferta e uma ação, perfeitas para campanhas, lançamentos e captação rápida de oportunidades.</p>
+              <span>ESTRATÉGIA / COPY / DESIGN / DESENVOLVIMENTO</span>
+            </div>
+          </article>
+          <article class="service-item reveal">
+            <button type="button" data-cursor="Abrir" aria-expanded="false">
+              <span class="service-item__number">02</span>
+              <span class="service-item__title">Sites institucionais</span>
+              <span class="service-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="service-item__panel">
+              <p>Uma apresentação completa, profissional e memorável para transformar pesquisa em credibilidade e credibilidade em contato.</p>
+              <span>POSICIONAMENTO / UX / SEO LOCAL / PERFORMANCE</span>
+            </div>
+          </article>
+          <article class="service-item reveal">
+            <button type="button" data-cursor="Abrir" aria-expanded="false">
+              <span class="service-item__number">03</span>
+              <span class="service-item__title">Catálogos digitais</span>
+              <span class="service-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="service-item__panel">
+              <p>Produtos organizados em um catálogo simples de explorar, com pedidos enviados ao WhatsApp já prontos para avançar.</p>
+              <span>CATÁLOGO / FILTROS / PEDIDO / WHATSAPP</span>
+            </div>
+          </article>
+          <article class="service-item reveal">
+            <button type="button" data-cursor="Abrir" aria-expanded="false">
+              <span class="service-item__number">04</span>
+              <span class="service-item__title">Sistemas sob medida</span>
+              <span class="service-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="service-item__panel">
+              <p>Interfaces e automações que reduzem trabalho manual, organizam processos e acompanham a rotina real da empresa.</p>
+              <span>DIAGNÓSTICO / INTERFACE / AUTOMAÇÃO / SUPORTE</span>
+            </div>
+          </article>
+          <article class="service-item reveal">
+            <button type="button" data-cursor="Abrir" aria-expanded="false">
+              <span class="service-item__number">05</span>
+              <span class="service-item__title">Social media</span>
+              <span class="service-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="service-item__panel">
+              <p>Conteúdo estratégico para sua empresa aparecer com consistência, construir autoridade e permanecer na lembrança do cliente.</p>
+              <span>CONTEÚDO / CONSISTÊNCIA / AUTORIDADE / LEMBRANÇA</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="principles" id="padrao">
+        <div class="principles__sticky">
+          <span class="kicker">NOSSO PADRÃO</span>
+          <h2>Clareza em cada <em>etapa.</em></h2>
+          <p>Design bonito abre a conversa. Estratégia, velocidade e uma jornada simples fazem o cliente continuar.</p>
+        </div>
+        <div class="principles__cards">
+          <article class="principle-card reveal">
+            <span>01 / 04</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20"/><path d="M32 5v10M32 49v10M5 32h10M49 32h10"/></svg>
+            <h3>Direção estratégica</h3>
+            <p>Antes do layout, entendemos o negócio, a oferta e a ação que a página precisa provocar.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span>02 / 04</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 42 32 10l22 32-22 12Z"/><path d="m19 40 13-18 13 18"/></svg>
+            <h3>Identidade própria</h3>
+            <p>O visual nasce da personalidade da marca, sem tema pronto e sem aparência genérica.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span>03 / 04</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 42h16l8-24 8 32 7-18h9"/></svg>
+            <h3>Performance real</h3>
+            <p>Estrutura leve, responsiva e preparada para funcionar bem no celular, onde a venda acontece.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span>04 / 04</span>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 13h40v30H30l-12 9v-9h-6Z"/><path d="M22 27h20M22 34h13"/></svg>
+            <h3>Contato sem atrito</h3>
+            <p>Chamadas claras e WhatsApp integrado para o visitante saber exatamente qual é o próximo passo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="proof" id="prova">
+        <div class="proof__orb" aria-hidden="true">
+          <span class="proof__orb-ring"></span>
+          <span class="proof__orb-ring"></span>
+          <span class="proof__orb-ring"></span>
+          <span class="proof__orb-sat"></span>
+          <span class="proof__orb-sat proof__orb-sat--inner"></span>
+          <span class="proof__orb-core"></span>
+        </div>
+        <div class="proof__content reveal">
+          <span class="kicker">DO PRIMEIRO PIXEL AO ÚLTIMO CLIQUE</span>
+          <h2>Uma presença digital que trabalha <em>junto com você.</em></h2>
+          <p>Enquanto você cuida do seu negócio, o site apresenta, orienta e prepara o cliente para a conversa.</p>
+        </div>
+        <div class="proof__stats">
+          <article class="reveal"><strong>05</strong><span>projetos selecionados</span></article>
+          <article class="reveal"><strong>100%</strong><span>design sob medida</span></article>
+          <article class="reveal"><strong>01</strong><span>parceria do início ao pós-lançamento</span></article>
+        </div>
+      </section>
+
+      <section class="process section" id="processo">
+        <div class="section-index reveal">
+          <span>03</span>
+          <span>Nosso processo</span>
+        </div>
+        <div class="process__heading reveal">
+          <h2 class="display-title">Um caminho claro.<br /><em>Um resultado único.</em></h2>
+          <p>Você acompanha cada decisão. A Benny cuida da complexidade e mantém o processo simples.</p>
+        </div>
+        <ol class="process-list">
+          <span class="process-list__progress" aria-hidden="true"></span>
+          <li class="reveal">
+            <span>01</span><div><h3>Imersão</h3><p>Entendemos o negócio, o cliente, os diferenciais e os objetivos.</p></div><small>CONVERSA + DIAGNÓSTICO</small>
+          </li>
+          <li class="reveal">
+            <span>02</span><div><h3>Direção</h3><p>Organizamos a estratégia, a estrutura, a mensagem e a identidade visual.</p></div><small>ESTRATÉGIA + UX</small>
+          </li>
+          <li class="reveal">
+            <span>03</span><div><h3>Construção</h3><p>Transformamos o plano em uma experiência rápida, responsiva e envolvente.</p></div><small>DESIGN + CÓDIGO</small>
+          </li>
+          <li class="reveal">
+            <span>04</span><div><h3>Lançamento</h3><p>Testamos, publicamos e deixamos tudo pronto para receber oportunidades.</p></div><small>TESTES + PUBLICAÇÃO</small>
+          </li>
+        </ol>
+      </section>
+
+      <section class="testimonials section" id="depoimentos">
+        <div class="section-index">
+          <span>04</span>
+          <span>Depoimentos</span>
+        </div>
+
+        <div class="testimonials__top">
+          <h2 class="display-title">Quem já contratou <em>recomenda.</em></h2>
+          <div class="rating">
+            <strong>5,0</strong>
+            <div class="rating__meta">
+              <span class="rating__stars" role="img" aria-label="Cinco estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <span>7 avaliações reais no Google</span>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-gold">Motoristas executivos</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Perfil profissional com avaliações, rotas disponíveis e botão de solicitação de corrida pelo WhatsApp.</p>
-        </article>
+        </div>
 
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-              <line stroke-linecap="round" x1="3" y1="6" x2="21" y2="6"/>
-              <path stroke-linecap="round" d="M16 10a4 4 0 01-8 0"/>
-            </svg>
+        <div class="reviews" role="region" aria-roledescription="carrossel" aria-label="Avaliações de clientes no Google">
+          <div class="reviews__track" tabindex="0">
+            <article class="review" data-tom="0">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">D</span>
+                <div class="review__who">
+                  <strong>Dariane Nicollette</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Excelente superou todas as minhas expectativas</p></div>
+            </article>
+            <article class="review" data-tom="1">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">S</span>
+                <div class="review__who">
+                  <strong>Suhellen Campos</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Utilizei os serviços do Benny para construção do site da minha empresa, ele foi super atencioso tirando todas minhas duvidas, adequando o projeto de acordo com as minhas necessidades e o trabalho foi excelente. Contratem sem medo!</p></div>
+            </article>
+            <article class="review" data-tom="2">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">C</span>
+                <div class="review__who">
+                  <strong>Clínica Sheila Ribeiro</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Quem trabalha na área da estética e beleza sabe o quanto é importante ter um sistema que realmente facilite a rotina do dia a dia.</p><p>E foi exatamente isso que o Benny fez por mim!</p><p>Ele desenvolveu um sistema de agendamento e gestão da clínica totalmente personalizado, pensado de acordo com as minhas necessidades e com a minha rotina.</p><p>E o melhor: ele fez exatamente o que eu precisava e foi além!</p><p>Hoje, minha organização e meus atendimentos ficaram muito mais práticos e fáceis.</p><p>Super indico de olhos fechados!</p></div>
+            </article>
+            <article class="review" data-tom="3">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">S</span>
+                <div class="review__who">
+                  <strong>Suellen Santos</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Benny é uma pessoa incrível, ótimo profissional.. Detalhei oque eu queria e ele superou todas as minhas espectativas!</p><p>Recomendo muito</p></div>
+            </article>
+            <article class="review" data-tom="0">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">L</span>
+                <div class="review__who">
+                  <strong>Luciana Maria Santos</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Atendimento rápido foi muito rápido a criação em dias já estava trabalhado super indico o Benny supriu as minhas expetativas super indico</p></div>
+            </article>
+            <article class="review" data-tom="1">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">A</span>
+                <div class="review__who">
+                  <strong>Alessandra Leal</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Qualidade no atendimento? Tem! Compromisso? De sobra! Dedicação? Nem se fala! E talento… bom, isso o Benny tem de sobra!</p><p>Esse é o tipo de profissional que não faz nada pela metade. Ele mergulha de cabeça em cada projeto, coloca toda a dedicação e ainda consegue surpreender entregando muito mais do que aquilo que a gente imaginava.</p><p>É criatividade, competência e aquele famoso “deixa comigo” que a gente sabe que vai dar certo!</p><p>Isso, sim, é ser um profissional de excelência! Parabéns, Benny, pelo trabalho incrível e por sempre entregar além do esperado!</p></div>
+            </article>
+            <article class="review" data-tom="2">
+              <header class="review__head">
+                <span class="review__avatar" aria-hidden="true">G</span>
+                <div class="review__who">
+                  <strong>Geiciane Dos Santos Leal</strong>
+                  <time datetime="2026-09">setembro de 2026</time>
+                </div>
+                <svg class="review__g" viewBox="0 0 48 48" aria-label="Google" role="img"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              </header>
+              <span class="review__stars" role="img" aria-label="Nota 5 de 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+              <div class="review__text"><p>Qualidade no atendimento, compromisso, dedicação e, claro, talento! É isso que define esse homem. O Benny não apenas entra de cabeça em cada projeto, mas consegue ir além e entregar algo que, muitas vezes, sequer havia sido imaginado. Isso, sim, é ser um excelente profissional!</p></div>
+            </article>
           </div>
-          <h3 class="text-xl font-bold text-gold">Lojas locais</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Vitrine digital com catálogo de produtos, preços e atendimento rápido via WhatsApp.</p>
-        </article>
+        </div>
 
-        <article class="reveal glass rounded-xl p-6">
-          <div class="icon-circle mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="1.8" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path stroke-linecap="round" d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-            </svg>
+        <div class="testimonials__foot">
+          <div class="testimonials__actions">
+            <a class="arrow-link" href="https://g.page/r/CU5hNvUSeZHIEAE/review" target="_blank" rel="noopener">Deixe sua avaliação <svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></a>
+            <a class="arrow-link" href="https://www.google.com/maps/place/?q=place_id:ChIJGSad-m9TzpQRTmE29RJ5kcg" target="_blank" rel="noopener">Ver todas no Google <svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></a>
           </div>
-          <h3 class="text-xl font-bold text-gold">Profissionais autônomos</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/70">Portfólio pessoal com apresentação de serviços, preços e formulário de contato integrado.</p>
-        </article>
+          <div class="reviews__nav">
+            <button class="reviews__btn" type="button" data-dir="-1" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button class="reviews__btn" type="button" data-dir="1" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+      </section>
 
-      </div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== PACOTES =============================== -->
-    <section id="pacotes" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Pacotes</h2>
-        <p class="mt-3 text-white/75">Escolha o plano ideal para o seu momento.</p>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-3">
-
-        <!-- Página Inicial -->
-        <article class="reveal glass flex flex-col rounded-2xl p-7">
-          <p class="text-xs uppercase tracking-[0.14em] text-white/70">Página Inicial</p>
-          <h3 class="mt-3 text-2xl font-extrabold text-gold">Ideal para começar</h3>
-          <ul class="mt-5 flex-1 space-y-3 text-white/85">
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>1 página profissional</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Botão WhatsApp integrado</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Layout responsivo</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Até 1 revisão</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Prazo de aprovação: 48h</span>
-            </li>
-          </ul>
-          <a href="#contato" class="mt-6 block w-full rounded-xl border border-gold/40 py-2.5 text-center text-sm font-bold text-gold transition hover:bg-[rgba(255,184,0,0.08)]">
-            Começar agora
+      <section class="cta" id="contato">
+        <div class="cta__grid" aria-hidden="true"></div>
+        <div class="cta__mark" aria-hidden="true">
+          <img src="logo-benny.jpeg" alt="" width="1250" height="1250" />
+        </div>
+        <div class="cta__content reveal">
+          <span class="kicker">SEU PRÓXIMO CLIENTE JÁ ESTÁ ONLINE</span>
+          <h2>Vamos criar o site que faz ele <em>escolher você?</em></h2>
+          <a class="cta__action" href="/comece.html?o=site">
+            <span>Começar um projeto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
           </a>
-        </article>
+        </div>
+      </section>
+    </main>
 
-        <!-- Site Profissional (destaque) -->
-        <article class="reveal relative flex flex-col overflow-hidden rounded-2xl border border-gold/40 bg-gradient-to-b from-[#1a1408] to-[#0a0a0a] p-7 shadow-gold">
-          <div class="absolute right-4 top-4">
-            <span class="badge-popular">Mais Popular</span>
-          </div>
-          <p class="text-xs uppercase tracking-[0.14em] text-gold">Site Profissional</p>
-          <h3 class="mt-3 text-2xl font-extrabold text-gold">Solução completa</h3>
-          <ul class="mt-5 flex-1 space-y-3 text-white/90">
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Site completo</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>SEO básico</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Formulário e conversão</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Até 3 revisões</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Prazo de aprovação: 7 dias</span>
-            </li>
-          </ul>
-          <a href="#contato" class="btn-gold mt-6 block w-full rounded-xl py-2.5 text-center text-sm font-bold">
-            Escolher este plano
+    <footer class="site-footer">
+      <div class="site-footer__main">
+        <div class="site-footer__brand">
+          <a class="footer-brand" href="#inicio" aria-label="Benny Soluções Web, voltar ao início">
+            <img src="logo-benny.jpeg" alt="" width="1250" height="1250" loading="lazy" decoding="async" />
+            <span>BENNY<small>SOLUÇÕES WEB</small></span>
           </a>
-        </article>
-
-        <!-- Projeto Premium -->
-        <article class="reveal glass flex flex-col rounded-2xl p-7">
-          <p class="text-xs uppercase tracking-[0.14em] text-white/70">Projeto Premium</p>
-          <h3 class="mt-3 text-3xl font-extrabold text-gold">sob orçamento</h3>
-          <ul class="mt-5 flex-1 space-y-3 text-white/85">
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Sistema personalizado</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Dashboard e automações</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Estratégia completa</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Até 5 revisões</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              <span>Prazo a combinar</span>
-            </li>
-          </ul>
-          <a href="#contato" class="mt-6 block w-full rounded-xl border border-gold/40 py-2.5 text-center text-sm font-bold text-gold transition hover:bg-[rgba(255,184,0,0.08)]">
-            Solicitar orçamento
-          </a>
-        </article>
-
-      </div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== PORTFOLIO =============================== -->
-    <section id="portfolio" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-8 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Portfólio Profissional</h2>
-          <p class="mt-3 text-white/75">Modelos de projetos que mostram padrão premium e foco comercial.</p>
+          <p class="site-footer__tagline">Seu negócio online, do jeito certo.</p>
+          <dl class="site-footer__meta">
+            <div>
+              <dt>Base</dt>
+              <dd>Itapecerica da Serra, SP</dd>
+            </div>
+            <div>
+              <dt>Atendimento</dt>
+              <dd>Brasil / remoto</dd>
+            </div>
+          </dl>
         </div>
-        <div class="flex items-center gap-2">
-          <button id="portfolioPrev" type="button" class="portfolio-nav-btn" aria-label="Projeto anterior">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline stroke-linecap="round" stroke-linejoin="round" points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button id="portfolioNext" type="button" class="portfolio-nav-btn" aria-label="Próximo projeto">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline stroke-linecap="round" stroke-linejoin="round" points="9 18 15 12 9 6"/></svg>
-          </button>
+
+        <nav class="site-footer__nav" aria-label="Seções do site">
+          <span>Navegação</span>
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#processo">Processo</a>
+        </nav>
+
+        <div class="site-footer__nav">
+          <span>Contato</span>
+          <a href="/comece.html?o=site">WhatsApp<i><svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></i></a>
+          <a href="https://www.instagram.com/benny.solucoes.web/" target="_blank" rel="noreferrer">Instagram<i><svg class="ico-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></i></a>
         </div>
       </div>
 
-      <div id="portfolioSlider" class="portfolio-slider">
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-ingrid.jpg" alt="Print real do site de nail designer entregue para atendimento domiciliar" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Site de Nail Designer</h3>
-            <p class="mt-2 text-white/85">Página premium para atendimento domiciliar com galeria de trabalhos e agendamento no WhatsApp.</p>
-            <a href="projeto.html?p=ingrid" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
-          </div>
-        </article>
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-uber-vip.jpg" alt="Print real do site Uber VIP entregue para motorista executivo" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Site de Motorista VIP</h3>
-            <p class="mt-2 text-white/85">Página para corrida executiva com foco em captação de corridas para Uber e 99.</p>
-            <a href="projeto.html?p=uber-vip" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
-          </div>
-        </article>
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-igreja.jpg" alt="Print real do site institucional entregue para a Comunidade Cristã Missão Vitória" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Página para Igreja</h3>
-            <p class="mt-2 text-white/85">Agenda de cultos, localização e comunicação direta com visitantes.</p>
-            <a href="projeto.html?p=igreja" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
-          </div>
-        </article>
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-geise.jpg" alt="Print real do site de confeitaria entregue para Gê Bolos e Doces" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Site de Confeitaria</h3>
-            <p class="mt-2 text-white/85">Catálogo de bolos, chocotones e doces finos com pedido direto pelo WhatsApp.</p>
-            <a href="projeto.html?p=geise" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
-          </div>
-        </article>
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="assets/portfolio-suzucap.jpg" alt="Print real do site de oficina mecânica entregue para Suzucap" class="h-72 w-full object-cover sm:h-80 lg:h-96" loading="lazy">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Site de Oficina Mecânica</h3>
-            <p class="mt-2 text-white/85">Página para oficina especializada em Suzuki, com serviços e agendamento pelo WhatsApp.</p>
-            <a href="projeto.html?p=suzucap" class="mt-5 inline-block rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold transition hover:bg-gold hover:text-black">Ver projeto</a>
-          </div>
-        </article>
-        <article class="portfolio-slide portfolio-overlay reveal relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-glass">
-          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Loja local com catálogo e atendimento no WhatsApp" class="h-72 w-full object-cover sm:h-80 lg:h-96">
-          <div class="relative z-10 p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-gold">Loja Local</h3>
-            <p class="mt-2 text-white/85">Catálogo visual para atrair pedidos rápidos pelo WhatsApp.</p>
-            <button class="mt-5 cursor-default rounded-lg border border-gold/45 px-4 py-2 text-sm font-semibold text-gold/60">Em Breve</button>
-          </div>
-        </article>
+      <div class="site-footer__bottom">
+        <span>© <span data-year></span> Benny Soluções Web</span>
+        <a href="#inicio">Voltar ao topo <i><svg class="ico-seta ico-seta--cima" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.6 8H16v6.4"/></svg></i></a>
       </div>
+    </footer>
 
-      <div id="portfolioDots" class="mt-6 flex items-center justify-center gap-2"></div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== COMO FUNCIONA =============================== -->
-    <section id="como-funciona" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Como funciona</h2>
-        <p class="mt-3 text-white/75">Simples, rápido e sem burocracia.</p>
-      </div>
-      <div class="grid gap-5 md:grid-cols-3">
-        <article class="reveal glass rounded-xl p-6">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold/60 bg-[rgba(255,184,0,0.08)] text-xl font-black text-gold">1</div>
-          <h3 class="text-xl font-bold">Você chama no WhatsApp</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/65">Me conta sobre seu negócio, o que você vende e o que espera do site. Leva menos de 10 minutos.</p>
-        </article>
-        <article class="reveal glass rounded-xl p-6">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold/60 bg-[rgba(255,184,0,0.08)] text-xl font-black text-gold">2</div>
-          <h3 class="text-xl font-bold">Eu monto a proposta</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/65">Analiso o seu segmento e preparo uma proposta personalizada com escopo, prazo e investimento claros.</p>
-        </article>
-        <article class="reveal glass rounded-xl p-6">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold/60 bg-[rgba(255,184,0,0.08)] text-xl font-black text-gold">3</div>
-          <h3 class="text-xl font-bold">Em até 48h você recebe o layout</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/65">Você visualiza o design completo antes de qualquer ajuste final. Aprovação simples, sem complicação.</p>
-        </article>
-      </div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== BENEFÍCIOS =============================== -->
-    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Benefícios</h2>
-        <p class="mt-3 text-white/75">O que você ganha ao trabalhar com a Benny Soluções Web.</p>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">Entrega rápida</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">Site finalizado e no ar em até 7 dias úteis após aprovação do briefing.</p>
-          </div>
-        </div>
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">Design moderno</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">Layouts com identidade visual forte, tipografia cuidada e hierarquia que comunica.</p>
-          </div>
-        </div>
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">Site no celular</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">100% responsivo — funciona perfeitamente em celular, tablet e desktop.</p>
-          </div>
-        </div>
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">Botão direto para WhatsApp</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">CTA visível em todas as seções — cliente clica e já abre a conversa no WhatsApp.</p>
-          </div>
-        </div>
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">Domínio próprio .com.br</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">Seu site no ar com endereço personalizado — um domínio .com.br que transmite profissionalismo e facilita que clientes te encontrem.</p>
-          </div>
-        </div>
-
-        <div class="reveal glass flex items-start gap-4 rounded-xl p-5">
-          <div class="icon-circle mt-0.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#FFB800" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-white">SEO básico</h3>
-            <p class="mt-1 text-sm leading-relaxed text-white/60">Código limpo, meta tags e estrutura semântica que ajudam no Google desde o primeiro dia.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== ATENDIMENTO LOCAL =============================== -->
-    <section id="regiao" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="reveal mb-10">
-        <h2 class="text-3xl font-extrabold text-gold sm:text-4xl">Criação de sites em Itapecerica da Serra e região</h2>
-        <p class="mt-4 max-w-3xl leading-relaxed text-white/70">
-          A Benny Soluções Web fica em Itapecerica da Serra e atende negócios de toda a cidade — do Centro ao Jardim Jacira, Parque Paraíso, Valo Velho e Potuverá — além das cidades vizinhas. Por ser da região, entendemos o comércio local e criamos sites pensados para atrair clientes que buscam no Google por serviços perto deles.
-        </p>
-      </div>
-      <div class="reveal grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        <a href="/criacao-de-sites-itapecerica-da-serra.html" class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80 transition hover:text-gold">Itapecerica da Serra</a>
-        <a href="/criacao-de-sites-embu-das-artes.html" class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80 transition hover:text-gold">Embu das Artes</a>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">Taboão da Serra</div>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">Cotia</div>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">Embu-Guaçu</div>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">São Lourenço da Serra</div>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">Zona Sul de São Paulo</div>
-        <div class="glass rounded-xl p-4 text-center text-sm font-semibold text-white/80">Todo o Brasil (online)</div>
-      </div>
-    </section>
-
-    <div class="mx-auto max-w-7xl section-divider"></div>
-
-    <!-- =============================== CONTATO =============================== -->
-    <section id="contato" class="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
-      <div class="reveal rounded-2xl border border-gold/35 bg-gradient-to-r from-[#1a1408] to-[#0a0a0a] p-8 shadow-gold sm:p-12">
-        <h2 class="text-3xl font-black leading-tight text-gold sm:text-4xl">Quer colocar seu negócio na internet ainda essa semana?</h2>
-        <p class="mt-4 max-w-2xl text-white/85">Me chama agora no WhatsApp e eu te mostro o melhor caminho para ter um site profissional que gere mais contatos.</p>
-        <a href="https://wa.me/5511959487115?text=Ol%C3%A1%2C%20quero%20colocar%20meu%20neg%C3%B3cio%20na%20internet%20ainda%20essa%20semana." target="_blank" rel="noopener noreferrer" class="btn-gold mt-7 inline-block rounded-xl px-7 py-3 text-sm font-bold">
-          Falar no WhatsApp agora
-        </a>
-      </div>
-    </section>
-    </div>
-  </main>
-
-  <!-- =============================== FOOTER =============================== -->
-  <footer class="border-t border-white/10 bg-black">
-    <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-      <div class="flex flex-col gap-1.5">
-        <a href="#inicio" aria-label="Benny Soluções Web — Início">
-          <img src="assets/Logo.png?v=2" alt="Benny Soluções Web" style="max-height:38px;width:auto;object-fit:contain;object-position:left center;" decoding="async">
-        </a>
-        <p class="text-sm text-white/50">Sites com visual premium e foco comercial — Itapecerica da Serra e região.</p>
-      </div>
-      <p class="text-sm text-white/50">© <span id="year"></span> Benny Soluções Web. Todos os direitos reservados.</p>
-    </div>
-
-    <div class="border-t border-white/5">
-      <div class="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
-        <p class="text-[11px] leading-relaxed text-white/25">
-          A Benny Soluções Web é uma agência de criação de sites de Itapecerica da Serra (SP) que atende empresas e profissionais de toda a região sudoeste da Grande São Paulo — Embu das Artes, Taboão da Serra, Cotia, Embu-Guaçu e São Lourenço da Serra — além de projetos online para todo o Brasil.
-        </p>
-        <p class="mt-2 text-[11px] leading-relaxed text-white/25">
-          Criamos sites profissionais, landing pages, cardápios digitais com QR Code e catálogos para pequenos negócios: salões de beleza, barbearias, restaurantes, igrejas, clínicas e prestadores de serviço. Todos os projetos incluem domínio próprio, integração com WhatsApp e otimização básica para o Google.
-        </p>
-        <p class="mt-2 text-[11px] leading-relaxed text-white/25">
-          Atendimento por cidade: <a href="/criacao-de-sites-itapecerica-da-serra.html" class="text-gold/60 underline-offset-2 hover:underline">criação de sites em Itapecerica da Serra</a> e <a href="/criacao-de-sites-embu-das-artes.html" class="text-gold/60 underline-offset-2 hover:underline">criação de sites em Embu das Artes</a>.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-
-    document.querySelectorAll("#mobileMenu a").forEach((link) => {
-      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("active");
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    const portfolioSlider = document.getElementById("portfolioSlider");
-    if (portfolioSlider) {
-      const slides = Array.from(portfolioSlider.children);
-      const dotsWrap = document.getElementById("portfolioDots");
-      const prevBtn = document.getElementById("portfolioPrev");
-      const nextBtn = document.getElementById("portfolioNext");
-
-      slides.forEach((slide, i) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "portfolio-dot";
-        dot.setAttribute("aria-label", `Ir para o projeto ${i + 1}`);
-        dot.addEventListener("click", () => {
-          slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-        });
-        dotsWrap.appendChild(dot);
-      });
-      const dots = Array.from(dotsWrap.children);
-
-      const updateActiveDot = () => {
-        const wrapRect = portfolioSlider.getBoundingClientRect();
-        const center = wrapRect.left + wrapRect.width / 2;
-        let closest = 0;
-        let minDist = Infinity;
-        slides.forEach((slide, i) => {
-          const r = slide.getBoundingClientRect();
-          const dist = Math.abs(r.left + r.width / 2 - center);
-          if (dist < minDist) { minDist = dist; closest = i; }
-        });
-        dots.forEach((d, i) => d.classList.toggle("active", i === closest));
-      };
-
-      let scrollTimer;
-      portfolioSlider.addEventListener("scroll", () => {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(updateActiveDot, 80);
-      }, { passive: true });
-
-      const scrollByOneSlide = (dir) => {
-        const amount = slides[0].getBoundingClientRect().width + 20;
-        portfolioSlider.scrollBy({ left: dir * amount, behavior: "smooth" });
-      };
-      prevBtn.addEventListener("click", () => scrollByOneSlide(-1));
-      nextBtn.addEventListener("click", () => scrollByOneSlide(1));
-
-      updateActiveDot();
-      window.addEventListener("resize", updateActiveDot);
-    }
-
-    const scrollHint = document.getElementById("scrollHint");
-    const heroSection = document.querySelector(".hero-visual");
-    if (scrollHint && heroSection) {
-      const hideScrollHint = () => {
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        scrollHint.classList.toggle("is-hidden", heroBottom < window.innerHeight * 0.55);
-      };
-      hideScrollHint();
-      window.addEventListener("scroll", hideScrollHint, { passive: true });
-    }
-  </script>
-</body>
+    <div class="cursor" aria-hidden="true"><span class="cursor__inner"></span></div>
+  </body>
 </html>
