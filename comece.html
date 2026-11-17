@@ -758,6 +758,7 @@
     document.getElementById("whatsappButton").addEventListener("click", function () {
       medir("funil_whatsapp", getAnswerContext());
       medir("whatsapp_click_diagnostico", { link_url: this.href });
+      medir("whatsapp_click", { botao: "diagnostico", pagina: location.pathname });
       try { if (window.gtag) gtag("event", "conversion", { send_to: ADS_SEND_TO }); } catch (error) {}
     });
     function linkWhatsappDireto() {
@@ -776,6 +777,7 @@
     document.getElementById("directWhatsapp").addEventListener("click", function () {
       this.href = linkWhatsappDireto();
       medir("whatsapp_click_direto", Object.assign({ etapa: questionIndex + 1 }, getAnswerContext()));
+      medir("whatsapp_click", { botao: "direto", pagina: location.pathname });
       try { if (window.gtag) gtag("event", "conversion", { send_to: ADS_SEND_TO }); } catch (error) {}
     });
     medir("funil_abriu");
